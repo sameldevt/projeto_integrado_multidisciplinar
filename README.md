@@ -1,7 +1,17 @@
-# projeto_integrado_multidisciplinar
-Projeto gerenciamento de museu multitemático
+<h1>
+     <img align="right" width="160px" src="https://logodownload.org/wp-content/uploads/2021/06/unip-logo.png"></a>
+    <span>Projeto integrado multidiscliplinar 2</span>
+</h1>
 
-* CONTEXTUALIZAÇÃO DO CASO
+### Projeto - gerenciamento de museu multitemático
+
+Tendo por base os conteúdos das disciplinas de Fundamentos de Redes de
+Dados E Comunicação, Engenharia de Software I, Linguagem e Técnicas de
+Programação, Matemática para Computação, Ética e Legislação Profissional e
+Metodologia Científica, o grupo do PIM deverá apresentar um Projeto que
+gerencia um museu multitemático.
+
+## Contextualização do caso
 
 Uma organização sem fins lucrativos pretende criar um museu 
 multitemático. Os temas exibidos serão voltados a questões que estiveram em 
@@ -9,6 +19,7 @@ evidência nos últimos três anos ou que possivelmente estarão em evidência p
 próximos três anos. Cada tema permanecerá em exibição dependendo da 
 reação do público visitante. Os temas nunca serão temas polêmicos, mas sim de 
 cultura geral e atualidades.
+
 Os primeiros temas serão:
 1) 100 anos da semana de arte moderna.
 2) 150 anos de Santos Dumont
