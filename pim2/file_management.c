@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "file_management.h"
 
-const FILE** filePointer;
 
 void readFile(char filePath[50]) {
+
+	FILE** filePointer;
 
 	filePointer = fopen(filePath, "r");
 
@@ -22,6 +23,8 @@ void readFile(char filePath[50]) {
 
 void reWriteFile(char filePath[], char input[]) {
 
+	FILE** filePointer;
+
 	filePointer = fopen(filePath, "w");
 
 	if (verifyFileExistence(filePointer)) {
@@ -37,6 +40,8 @@ void reWriteFile(char filePath[], char input[]) {
 }
 
 void appendToFile(char filePath[], char input[]) {
+
+	FILE** filePointer;
 
 	filePointer = fopen(filePath, "a");
 

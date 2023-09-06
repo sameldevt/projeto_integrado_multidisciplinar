@@ -1,3 +1,4 @@
 ﻿  main.c
-C:\ws-vs\pim2\pim2\main.c(12,26): warning C4090: 'function': different 'const' qualifiers
-  pim2.vcxproj -> C:\ws-vs\pim2\x64\Debug\pim2.exe
+  validation.c
+C:\ws-vs\pim2\pim2\validation.c(53,18): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
