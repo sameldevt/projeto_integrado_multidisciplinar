@@ -13,15 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Resource Files\arts">
-      <UniqueIdentifier>{820f374d-25ad-4371-959d-bc5febb6ae99}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\arts\art1">
-      <UniqueIdentifier>{a415e6d1-dbdc-437b-80e4-d736cea998c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\menus">
-      <UniqueIdentifier>{ea932415-055f-496f-9b51-03e3418a4ea7}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -33,13 +24,16 @@
     <ClCompile Include="file_management.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="print_management.c">
+    <ClCompile Include="print_functions.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="print_functions.h">
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="validation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="user_interaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -55,28 +49,5 @@
     <None Include="error_handling.h">
       <Filter>Header Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="descripton.txt">
-      <Filter>Resource Files\arts\art1</Filter>
-    </Text>
-    <Text Include="art1.txt">
-      <Filter>Resource Files\arts\art1</Filter>
-    </Text>
-    <Text Include="art2.txt">
-      <Filter>Resource Files\arts\art1</Filter>
-    </Text>
-    <Text Include="art3.txt">
-      <Filter>Resource Files\arts\art1</Filter>
-    </Text>
-    <Text Include="art4.txt">
-      <Filter>Resource Files\arts\art1</Filter>
-    </Text>
-    <Text Include="main.txt">
-      <Filter>Resource Files\menus</Filter>
-    </Text>
-    <Text Include="tickets.txt">
-      <Filter>Resource Files\menus</Filter>
-    </Text>
   </ItemGroup>
 </Project>

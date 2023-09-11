@@ -130,8 +130,9 @@
     <ClCompile Include="error_handling.c" />
     <ClCompile Include="file_management.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="print_management.c" />
+    <ClCompile Include="print_functions.c" />
     <ClCompile Include="print_functions.h" />
+    <ClCompile Include="user_interaction.cpp" />
     <ClCompile Include="validation.c" />
   </ItemGroup>
   <ItemGroup>
@@ -140,15 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="error_handling.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="art1.txt" />
-    <Text Include="art2.txt" />
-    <Text Include="art3.txt" />
-    <Text Include="art4.txt" />
-    <Text Include="descripton.txt" />
-    <Text Include="main.txt" />
-    <Text Include="tickets.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

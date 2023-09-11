@@ -1,12 +1,29 @@
 #include <stdio.h>
 #include <time.h>
+#include <conio.h>
+
+char keyboardCheck(){
+	char key;
+
+	while (1) {
+		if (_kbhit()) { // Verifica se uma tecla foi pressionada
+			key = _getch(); // Obtém a tecla pressionada
+			printf("Tecla pressionada: %c\n", key);
+			if (key == 'q') { // Exemplo de saída do loop ao pressionar 'q'
+				break;
+			}
+		}
+	}
+
+	return key;
+}
 
 /*
   O direito da meia entrada foi concedido pela implementação
   da lei 9.349/96, para estudantes de educação infantil, ensino fundamental,
   ensino médio e ensino superior, incluindo pós graduação.
 */
-int studentIDValidation(char name[100], int studentId) {
+int tun {
 	if (sizeof(studentId) > 8) {
 		perror("O número de identificação precisa ter, no máximo, 8 digitos!");
 		return 0;
@@ -33,7 +50,7 @@ int disabledPersonValidation(int disabledPersonId) {
 	return 1;
 }
 
-int pixPaymentValidation(double value) {
+int pix_payment_validation(double value) {
 	if (value < 20.0) {
 		perror("Quantia insuficiênte");
 		return 0;
@@ -43,17 +60,9 @@ int pixPaymentValidation(double value) {
 	return 1;
 }
 
-int cardPaymentValidation(char cardHolder[100], int cardNumber, time_t cardExpirationDate, int identificationNumber) {
+int card_payment_validation(char cardHolder[100], int cardNumber, int identificationNumber) {
 	if (sizeof(cardNumber) < 12 && sizeof(cardNumber) > 12) {
 		perror("O número do cartão informado não é válido");
-		return 0;
-	}
-
-	time_t t = time(NULL);
-	struct tm tm = *localtime(&t);
-
-	if (cardExpirationDate < tm.tm_year) {
-		perror("Este cartão está fora do prazo de validade");
 		return 0;
 	}
 

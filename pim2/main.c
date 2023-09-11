@@ -1,11 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "file_management.h"
-
-char file[100] = "C:\\ws-vs\\pim2\\pim2\\art.txt";
+/* 
+ *  Projeto integrado multidiscliplinar 2 - gerenciamento de museu multitemático
+ * 
+ *  Este projeto foi feito a partir dos conhecimentos adquiridos nas aulas de
+ * Linguagens e Técnicas de Programação do segundo semestre do curso superior
+ * tecnólogo em Análise e Desenvolvimento de Sistemas da universidade paulista.
+ * 
+ *  Autor: Samuel Teixeira de Souza
+ *  Data de criação: 07/09/2023
+ *	  
+ */
 
 int main() {
 
-	readFile(file);
 }
