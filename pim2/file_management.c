@@ -15,8 +15,7 @@ char modern_week_arts_menu[100] = "resources\\menus\\comprar_ingresso.txt";
 
 
 /* Abre um arquivo a partir do caminho informado */
-
-void readFile(char filePath[50]) {
+void read_file(char filePath[50]) {
 
 	FILE** filePointer;
 
@@ -33,7 +32,7 @@ void readFile(char filePath[50]) {
 
 /* Reescreve o arquivo por completo */
 
-void rewriteFile(char filePath[], char input[]) {
+void rewrite_file(char filePath[], char input[]) {
 
 	FILE** filePointer;
 
@@ -46,7 +45,7 @@ void rewriteFile(char filePath[], char input[]) {
 
 /* Acrescenta uma linha ao arquivo informado */
 
-void appendToFile(char filePath[], char input[]) {
+void append_to_file(char filePath[], char input[]) {
 
 	FILE** filePointer;
 

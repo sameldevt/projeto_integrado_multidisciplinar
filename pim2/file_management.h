@@ -1,7 +1,10 @@
 #define FILE_MANAGEMENT
 
-void readFile(char filePath[]);
+/* Lê um arquivo */
+void read_file(char filePath[]);
 
-void reWriteFile(char filePath[], char input[]);
+/* Reescreve um arquivo */
+void rewrite_file(char filePath[], char input[]);
 
-void appendToFile(char filePath[], char input[]);
+/* Adiciona a um arquivo */
+void append_to_file(char filePath[], char input[]);

@@ -2,10 +2,13 @@
 #ifndef PRINT_FUNCTIONS
 #define PRINTF_FUNCITONS
 
-int printArt(char filePath[]);
+/* Imprime uma arte na tela junto a sua descrição */
+int print_art(char filePath[]);
 
-int printArtSurvey(char survey[]);
+/* Imprime a arte na tela junto ao seu questionário */
+int print_art_survey(char survey[]);
 
-int printMenuOptions(char menu[]);
+/* Imprime um menu na tela */
+int print_menu(char menu[]);
 
 #endif
