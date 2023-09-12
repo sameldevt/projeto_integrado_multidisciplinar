@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 #include "file_management.h"
 
@@ -8,11 +9,11 @@ char path[100] = "\\pim2\\resources\\";
 /* inicio Menu principal */
 
 /* Função para escolher uma opção do menu principal */
-int select_main_menu_option() {
+int select_mainmenu_option() {
 	int choice;
 
 	/* Imprime o menu principal */
-	readFile(path);
+	read_file(path);
 
 	printf("Escolha uma opção: ");
 	scanf_s("%d", &choice);
@@ -23,7 +24,7 @@ int select_main_menu_option() {
 		select_ticket_type();
 	case 2: 
 		/* Imprime lista de temas */
-		readFile(path);
+		read_file(path);
 	case 3: 
 		/* Finaliza o programa */
 		printf("\nObrigado por usar o sistema do museu!");
@@ -36,32 +37,6 @@ int select_main_menu_option() {
 /* fim Menu principal */
 
 /* inicio Menu Ingressos */
-
-int select_ticket_type() {
-	int choice;
-
-	/* Imprime opções de ingresso */
-	readFile(path);
-
-	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
-
-	switch (choice) {
-	case 1:
-		full_price_ticket();
-	case 2:
-		student_ticket();
-	case 3:
-		senior_ticket();
-	case 4:
-		disabled_ticket();
-	case 5:
-		/* Volta para o menu principal */
-		select_main_menu_option();
-	default:
-		printf("\nOpção invalida!");
-	}
-}
 
 int full_price_ticket() {
 	char name[50];
@@ -119,6 +94,32 @@ int disabled_ticket() {
 	return 0;
 }
 
+int select_ticket_type() {
+	int choice;
+
+	/* Imprime opções de ingresso */
+	read_file(path);
+
+	printf("Escolha uma opção: ");
+	scanf_s("%d", &choice);
+
+	switch (choice) {
+	case 1:
+		full_price_ticket();
+	case 2:
+		student_ticket();
+	case 3:
+		senior_ticket();
+	case 4:
+		disabled_ticket();
+	case 5:
+		/* Volta para o menu principal */
+		select_main_menu_option();
+	default:
+		printf("\nOpção invalida!");
+	}
+}
+
 /* Registra um cliente no sistema */
 int register_client(char name[50]) {
 
@@ -128,27 +129,11 @@ int register_client(char name[50]) {
 
 /* inicio Menu Pagamento */
 
-int select_payment_menu() {
-	int choice;
-
-	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
-
-	switch (choice) {
-	case 1:
-		card_payment();
-	case 2:
-		pix_payment();
-	case 3:
-		select_ticket_type();
-	}
-}
-
 int card_payment() {
 	int card_number[12];
 	char card_holder[100];
 	int identification_number;
-	
+
 	printf("Digite o nome do titular do cartão: ");
 	scanf_s("%d", &card_holder);
 
@@ -174,15 +159,33 @@ int pix_payment() {
 	if (pix_payment_validation(value)) {
 		return 1;
 	}
-	
+
 	return 0;
+}
+
+int select_payment_menu() {
+	int choice;
+
+	printf("Escolha uma opção: ");
+	scanf_s("%d", &choice);
+
+	switch (choice) {
+	case 1:
+		card_payment();
+	case 2:
+		pix_payment();
+	case 3:
+		select_ticket_type();
+	default:
+		return 0;
+	}
 }
 
 /* fim Menu Pagamento */
 
 /* inicio Menu Temas */
 
-int select_theme_option(){
+int select_theme_menu_option(){
 	int choice;
 
 	/* Imprime a lista de temas */
@@ -191,56 +194,30 @@ int select_theme_option(){
 	printf("Escolha uma opção: ");
 	scanf_s("%d", &choice);
 	
-	switch (choice) {
-	case 1:
-		theme_1();
-	case 2:
-		theme_2();
-	case 3:
-		theme_3();
-	case 4:
-		theme_4();
-	default:
+	if(select_theme(choice)) {
+		return 0;
+	}
+	else {
 		printf("\nOpção invalida!");
 	}
-}
-
-int theme_1() {
-	/* Imprime tema 1 */
-	read_file(path);
-}
-
-int theme_2() {
-	/* Imprime tema 2 */
-	read_file(path);
-}
-
-int theme_3() {
-	/* Imprime tema 3 */
-	read_file(path);
-}
-
-int theme_4() {
-	/* Imprime tema 4 */
-	read_file(path);
 }
 
 /* fim Menu Temas */
 
 /* inicio Menu opções de temas */
 
-int select_art_option() {
-	int choice;
+int select_art(int theme) {
+	int art;
 
 	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
+	scanf_s("%d", &art);
 
-	switch (choice) {
+	switch (art) {
 	case 1:
-		select_art();
+		load_art(theme, art);
 	case 2:
 		/* Volta para o menu de temas */
-		select_theme_option();
+		select_theme_menu_option();
 	case 3:
 		/* Finaliza o programa */
 		return 0;
@@ -249,69 +226,54 @@ int select_art_option() {
 	}
 }
 
-int select_art() {
-	int choice;
-
-	/* Imprime a lista de artes */
-	read_file(path);
-
-	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
-
-	switch (choice) {
-	case 1:
-		art_1();
+int load_art(int theme, int art) {
+	switch (theme) {
+	case 1: 
 	case 2:
-		art_2();
 	case 3:
-		art_3();
 	case 4:
-		art_4();
 	default:
-		printf("\nOpção invalida!");
+
 	}
 }
 
-int art_1() {
+int switch_arts(int theme) {
+	char key;
+	int art = 0;
 
+	while (1) {
+		if (_kbhit()) { // Verifica se uma tecla foi pressionada
+			key = _getch(); // Obtém a tecla pressionada
+			if (key == '.') {
+				load_art(theme, art++);
+				if (art == 3) {
+					art--;
+				}
+			}
+			else if (key == ',') {
+				load_art(theme, art--);
+				if (art == 0) {
+					art++;
+				}
+			}
+
+			if (key == 'q') { // Exemplo de saída do loop ao pressionar 'q'
+				break;
+			}
+		}
+	}
+
+	return 0;
 }
-
-int art_2() {
-
-}
-
-int art_3() {
-
-}
-
-int art_4() {
-
-}
-
 /* fim Menu opções de temas */
 
 /* inicio Menu opções de arte */
 
-int give_art_feedback() {
-	int choice;
-
-	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
-
-	switch (choice) {
-	case 1:
-		rate();
-	case 2:
-		/* Volta para o menu de artes */
-		select_art();
-	default:
-		printf("\nOpção invalida!");
-	}
-}
-
-int rate() {
+/* Avalia uma arte */
+int evaluate_art(char art_name[20]) {
 	int rate;
-	int option;
+	char option;
+	char feedback[200];
 
 	printf("Dê uma nota para a arte: ");
 	scanf_s("%d", &rate);
@@ -319,23 +281,41 @@ int rate() {
 	printf("Deseja adicionar um comentário? [s]im [n]ão ");
 
 	if (option == 's') {
-		char comment[256];
-		printf("Digite seu comentário: ");
+		char comment[100];
+
+		/* Calcula o tamanho do array 'comment' */
+		int comment_size = sizeof(comment) / sizeof(comment[0]);
+
+		printf("Digite seu comentário (máx. 100 caracteres): ");
 		scanf_s("%s", &comment);
-		("Obrigado!\n");
+
+		if (sizeof(comment) > comment_size) {
+			printf("Seu comentário é muito grande! O tamanho máximo é de 100 caracteres.");
+			return 1;
+		}
+		else {
+			sprintf(feedback, "%s,%s,%d\n", art_name, comment, rate);
+
+			/* Registra a avaliação da arte no sistema */
+			append_to_file(path, feedback);
+
+			printf("Obrigado!\n");
+			return 0;
+		}
+	}
+	else if(option == 'n'){
+		sprintf(feedback, "%s,%d\n", art_name, rate);
+	
+		/* Registra a avaliação da arte no sistema */
+		append_to_file(path, feedback);
+
+		printf("Obrigado!\n");
+		return 0;
 	}
 	else {
-		printf("Obrigado!\n");
+		printf("Opção inválida!");
+		return 1;
 	}
-}
-
-int register_feedback() {
-
-	/* Registra o feedback no sistema */
-	append_to_file();
-
-	/* Volta para o menu de artes */
-	select_art();
 }
 
 /* fim Menu opções de arte */

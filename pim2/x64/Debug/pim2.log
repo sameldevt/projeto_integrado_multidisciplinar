@@ -1,4 +1,25 @@
-﻿  main.c
+﻿  error_handling.c
+  file_management.c
+C:\ws-vs\pim2\pim2\file_management.c(22,14): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\file_management.c(26,39): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\file_management.c(26,39): warning C4024: 'fgets': different types for formal and actual parameter 3
+C:\ws-vs\pim2\pim2\file_management.c(30,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\file_management.c(30,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\file_management.c(22,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\ws-vs\pim2\pim2\file_management.c(39,14): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\file_management.c(41,15): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\file_management.c(41,15): warning C4024: 'fputs': different types for formal and actual parameter 2
+C:\ws-vs\pim2\pim2\file_management.c(43,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\file_management.c(43,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\file_management.c(39,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\ws-vs\pim2\pim2\file_management.c(52,14): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\file_management.c(54,10): warning C4047: 'function': 'FILE *const ' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\file_management.c(54,10): warning C4024: 'fprintf': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\file_management.c(56,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\file_management.c(56,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\file_management.c(52,16): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  main.c
+  print_functions.c
   validation.c
-C:\ws-vs\pim2\pim2\validation.c(53,18): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\ws-vs\pim2\pim2\validation.c(26,9): error C2054: expected '(' to follow 'tun'
   Generating Code...

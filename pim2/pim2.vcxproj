@@ -138,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="file_management.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="user_interaction.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="error_handling.h" />
