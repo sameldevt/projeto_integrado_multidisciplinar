@@ -9,10 +9,8 @@
 */
 int validate_student_id(int student_id) {
 	if (sizeof(student_id) > 8) {
-		perror("O n�mero de identifica��o precisa ter, no m�ximo, 8 digitos!");
 		return 0;
 	}
-	printf("Usu�rio identificado com sucesso\n");
 	return 1;
 }
 
@@ -53,6 +51,5 @@ int validate_card_payment(char card_holder[100], int card_number, int identifica
 		return 0;
 	}
 
-	printf("Pagamento feito com sucesso\n");
 	return 1;
 }

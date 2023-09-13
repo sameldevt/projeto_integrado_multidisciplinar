@@ -4,6 +4,27 @@
 
 #include "file_management.h"
 
+/* Função para responder o questionario do tema */
+int answer_survey(int theme, char survey[50]){
+	int question;
+	int option;
+	char answer;
+
+	while(question < 5){
+		load_survey(theme, question);
+
+		printf("\nDigite uma opção: ");
+		scanf("%d", &option);
+		system("cls");
+
+		sprintf(answer, "%d,", option);
+
+		append_to_file(survey_sumary, answer);
+		
+		question++;
+	}
+}
+
 /* inicio Menu op��es de arte */
 /* Avalia uma arte */
 int evaluate_art(char art_name[20]) {
@@ -20,12 +41,12 @@ int evaluate_art(char art_name[20]) {
 		char comment[100];
 
 		/* Calcula o tamanho do array 'comment' */
-		int comment_size = sizeof(comment) / sizeof(comment[0]);
+		int comment_size = strlen(comment);
 
 		printf("Digite seu coment�rio (m�x. 100 caracteres): ");
 		scanf_s("%s", &comment);
 
-		if (sizeof(comment) > comment_size) {
+		if (comment > comment_size) {
 			printf("Seu coment�rio � muito grande! O tamanho m�ximo � de 100 caracteres.");
 			return 1;
 		}
@@ -130,9 +151,11 @@ int card_payment() {
 	scanf_s("%d", &identification_number);
 
 	if (card_payment_validation(card_holder, card_number, identification_number)) {
+		perror("Transação falhou!\n")
 		return 1;
 	}
-
+	
+	printf("Pagamento feito com sucesso\n");
 	return 0;
 }
 
@@ -190,10 +213,12 @@ int student_ticket() {
 	printf("Digite seu RA (m�ximo de 8 digitos): ");
 	scanf_s("%d", &studentId);
 
-	if (studentIDValidation(name, studentId)) {
-		return 1;
+	if (!(validate_student_id(name, studentId))) {
+		perror("O n�mero de identifica��o precisa ter, no m�ximo, 8 digitos!");
+		return 0;
 	}
-	return 0;
+	printf("Usu�rio identificado com sucesso\n");
+	return 1;
 }
 
 int senior_ticket() {
@@ -213,12 +238,12 @@ int senior_ticket() {
 }
 
 int disabled_ticket() {
-	int disabledPersonId;
+	int disabled_person_id;
 
 	printf("Digite sua identifica��o (m�ximo de 11 digitos): ");
-	scanf_s("%d", &disabledPersonId);
+	scanf_s("%d", &disabled_person_id);
 
-	if (disabledPersonValidation(disabledPersonId)) {
+	if (validate_disabled_person_id(disabled_person_id)) {
 		return 1;
 	}
 	return 0;

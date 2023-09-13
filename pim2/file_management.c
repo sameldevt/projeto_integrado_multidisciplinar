@@ -70,6 +70,7 @@ char survey_tema_a_ser_definido4[100] = "resources\\tema_a_ser_definido\\questio
 /* Lista de arquivos .csv */
 char csv_users[100] = "resources\\csv_files\\users.csv";
 char csv_user_feedback[100] = "resources\\csv_files\\user_feedback.csv";
+char csv_survey_sumary[100] = "resources\\csv_files\\survey_sumary.csv";
 
 
 /* Abre um arquivo a partir do caminho informado */
@@ -78,8 +79,6 @@ void read_file(char file_path[100]) {
 	FILE** file_pointer;
 
 	file_pointer = fopen(file_path, "r");
-
-
 
 	char buffer[256];
 
@@ -183,12 +182,79 @@ int load_art(int theme, int art) {
 /* Registra um usuario no sistema */
 void register_user(char name[50]) {
 	char user[50];
+	int length = strlen(name);
 	int i = 0;
 
-	while (user[i]) {
+	while (i != length) {
         user[i] = toupper(name[i]);
         i++;
     }
 	
 	append_to_file(csv_users, user);
+}
+
+/* Carrega um questionario de acordo com o seu tema */
+int load_survey(int theme, int question){
+	switch(theme){
+	case 0:
+		switch(question){
+		case 0:
+			read_file(survey_santos_dumont1);
+			break;
+		case 1:
+			read_file(survey_santos_dumont2);
+			break;
+		case 2:
+			read_file(survey_santos_dumont3);
+			break;
+		case 3:
+			read_file(survey_santos_dumont4);
+			break;
+		}
+	case 1:
+		switch(question){
+		case 0:
+			read_file(survey_olimpic_games1);
+			break;
+		case 1:
+			read_file(survey_olimpic_games2);
+			break;
+		case 2:
+			read_file(survey_olimpic_games3);
+			break;
+		case 3:
+			read_file(survey_olimpic_games4);
+			break;
+		}
+	case 2:
+		switch(question){
+		case 0:
+			read_file(survey_modern_week1);
+			break;
+		case 1:
+			read_file(survey_modern_week2);
+			break;
+		case 2:
+			read_file(survey_modern_week3);
+			break;
+		case 3:
+			read_file(survey_modern_week4);
+			break;
+		}
+	case 3:
+		switch(question){
+		case 0:
+			read_file(survey_tema_a_ser_definido1);
+			break;
+		case 1:
+			read_file(survey_tema_a_ser_definido2);
+			break;
+		case 2:
+			read_file(survey_tema_a_ser_definido3);
+			break;
+		case 3:
+			read_file(survey_tema_a_ser_definido4);
+			break;
+		}
+	}
 }
