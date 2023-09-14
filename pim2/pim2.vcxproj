@@ -102,7 +102,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -130,14 +130,14 @@
     <ClCompile Include="error_handling.c" />
     <ClCompile Include="file_management.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="print_functions.c" />
-    <ClCompile Include="print_functions.h" />
-    <ClCompile Include="user_interaction.cpp" />
+    <ClCompile Include="user_interaction.c" />
     <ClCompile Include="validation.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="file_management.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="user_interaction.h" />
+    <ClInclude Include="validation.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="error_handling.h" />

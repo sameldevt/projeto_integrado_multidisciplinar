@@ -24,16 +24,10 @@
     <ClCompile Include="file_management.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="print_functions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="print_functions.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="validation.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="user_interaction.cpp">
+    <ClCompile Include="user_interaction.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -42,6 +36,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="validation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="user_interaction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

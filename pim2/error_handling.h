@@ -2,6 +2,6 @@
 #ifndef ERROR_HANDLING
 #define ERROR_HANDLING
 
-int verifyFileExistence(FILE* file);
+int verify_file_existence(FILE** file);
 
 #endif

@@ -20,21 +20,13 @@
       "artifacts": [
         {
           "location": {
-            "uri": "file:///c:/ws-vs/projeto_integrado_multidisciplinar/pim2/main.c"
+            "uri": "file:///c:/ws-vs/projeto_integrado_multidisciplinar/pim2/validation.c"
           },
           "roles": [
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "1db653f491ecc225387df1a879ab57aa62bb1d4b0d3853a08d422237201d70b5"
-          }
-        },
-        {
-          "location": {
-            "uri": "file:///c:/ws-vs/projeto_integrado_multidisciplinar/pim2/user_interaction.h"
-          },
-          "hashes": {
-            "sha-256": "27c2df024767786025dcd47ba3603ce694bbd3f6d1547c2300a443d90c460fb8"
+            "sha-256": "13a7c37c42d3bbe77b88a159c5a7c7dbd8fea1cd103b582ac9eb47933c163743"
           }
         }
       ]

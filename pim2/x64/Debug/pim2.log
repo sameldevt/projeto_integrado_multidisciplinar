@@ -1,4 +1,30 @@
-﻿  main.c
-  validation.c
-C:\ws-vs\pim2\pim2\validation.c(53,18): error C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  Generating Code...
+﻿  user_interaction.c
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(13,3): warning C4013: 'Sleep' undefined; assuming extern returning int
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(35,35): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(48,9): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(62,15): warning C4047: '>': 'char [101]' differs in levels of indirection from 'int'
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(70,36): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(80,35): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(101,28): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(117,23): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(119,9): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(139,22): warning C4020: 'switch_arts': too many actual parameters
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(211,3): warning C4013: 'select_ticket_type' undefined; assuming extern returning int
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(221,26): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(226,5): warning C4013: 'validate_name' undefined; assuming extern returning int
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(241,33): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(250,29): warning C4047: 'function': 'int' differs in levels of indirection from 'char [51]'
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(250,29): warning C4024: 'validate_student_id': different types for formal and actual parameter 1
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(250,35): warning C4020: 'validate_student_id': too many actual parameters
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(267,32): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(294,32): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(322,41): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(350,21): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(363,24): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(364,22): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(390,28): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(39): warning C4716: 'answer_survey': must return a value
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(149): warning C4715: 'select_art': not all control paths return a value
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(383): warning C4715: 'select_main_menu_option': not all control paths return a value
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user_interaction.c(431): warning C4716: 'select_ticket_type': must return a value
+  pim2.vcxproj -> C:\ws-vs\projeto_integrado_multidisciplinar\x64\Debug\pim2.exe

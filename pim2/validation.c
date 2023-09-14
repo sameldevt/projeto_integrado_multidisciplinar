@@ -1,58 +1,36 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 #include <time.h>
 #include <conio.h>
 
-char keyboardCheck(){
-	char key;
-
-	while (1) {
-		if (_kbhit()) { // Verifica se uma tecla foi pressionada
-			key = _getch(); // Obtém a tecla pressionada
-			printf("Tecla pressionada: %c\n", key);
-			if (key == 'q') { // Exemplo de saída do loop ao pressionar 'q'
-				break;
-			}
-		}
-	}
-
-	return key;
-}
-
 /*
-  O direito da meia entrada foi concedido pela implementação
-  da lei 9.349/96, para estudantes de educação infantil, ensino fundamental,
-  ensino médio e ensino superior, incluindo pós graduação.
+  O direito da meia entrada foi concedido pela implementaï¿½ï¿½o
+  da lei 9.349/96, para estudantes de educaï¿½ï¿½o infantil, ensino fundamental,
+  ensino mï¿½dio e ensino superior, incluindo pï¿½s graduaï¿½ï¿½o.
 */
-int tun {
-	if (sizeof(studentId) > 8) {
-		perror("O número de identificação precisa ter, no máximo, 8 digitos!");
+int validate_student_id(int student_id) {
+	if (sizeof(student_id) > 8) {
 		return 0;
 	}
-
-	printf("Usuário identificado com sucesso\n");
 	return 1;
 }
 
 /*
- A carteira de identidade diferenciada é destinada às pessoas
- com deficiência. Ela é uma carteira de identidade civil como outra qualquer,
- mas aponta que seu dono tem algum tipo de deficiência.
- Essa modalidade de documento, no entanto, é emitida de forma gratuita.
+ A carteira de identidade diferenciada ï¿½ destinada ï¿½s pessoas
+ com deficiï¿½ncia. Ela ï¿½ uma carteira de identidade civil como outra qualquer,
+ mas aponta que seu dono tem algum tipo de deficiï¿½ncia.
+ Essa modalidade de documento, no entanto, ï¿½ emitida de forma gratuita.
  */
 
-int disabledPersonValidation(int disabledPersonId) {
-	if (sizeof(disabledPersonId) > 11) {
-		perror("O número de identificação precisa ter, no máximo, 11 digitos!");
+int validate_disabled_person_id(int disabled_person_id) {
+	if (sizeof(disabled_person_id) > 11) {		
 		return 0;
 	}
-
-	printf("Usuário identificado com sucesso\n");
 	return 1;
 }
 
-int pix_payment_validation(double value) {
+int validate_pix_payment(float value) {
 	if (value < 20.0) {
-		perror("Quantia insuficiênte");
+		perror("Saldo insuficiï¿½nte");
 		return 0;
 	}
 
@@ -60,17 +38,24 @@ int pix_payment_validation(double value) {
 	return 1;
 }
 
-int card_payment_validation(char cardHolder[100], int cardNumber, int identificationNumber) {
-	if (sizeof(cardNumber) < 12 && sizeof(cardNumber) > 12) {
-		perror("O número do cartão informado não é válido");
+int validate_card_payment(char card_holder[101], int card_number, int identification_number) {
+	if (sizeof(card_number) < 12 && sizeof(card_number) > 12) {
+		perror("O nï¿½mero do cartï¿½o informado nï¿½o ï¿½ vï¿½lido");
 		return 0;
 	}
 
-	if (identificationNumber > 3 && identificationNumber < 3) {
-		perror("Código de segurança inválido");
+	if (identification_number > 3 && identification_number < 3) {
+		perror("Cï¿½digo de seguranï¿½a invï¿½lido");
 		return 0;
 	}
 
-	printf("Pagamento feito com sucesso\n");
+	return 1;
+}
+
+int validate_name(char name[51]) {
+	if (sizeof(name) > 51) {
+		perror("Seu nome Ã© muito grande!");
+		return 0;
+	}
 	return 1;
 }
