@@ -1,5 +1,5 @@
 ++============================================================================++
-|| >> Meia gratuita - Criança                                                 ||
+|| >> Entrada gratuita - Criança                                              ||
 ++============================================================================++
 || >> Digite o seu nome                                                       ||
 || >> Digite a idade da criança (benefício válido apenas para menores         ||
