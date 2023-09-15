@@ -2,27 +2,29 @@
 #include "file_management.h"
 
 /* Lista de caminhos de arquivos 'menu' */
-const char menu_main[100] = "resources\\menus\\menu_principal.txt";
-const char menu_buy_tickets[100] = "resources\\menus\\menu_comprar_ingresso.txt";
-const char menu_themes[100] = "resources\\menus\\menu_lista_de_temas.txt";
-const char menu_halfprice_entry[100] = "resources\\menus\\menu_meia_entrada.txt";
-const char menu_free_entry[100] = "resources\\menus\\menu_entrada_gratuita.txt";
-const char menu_payment[100] = "resources\\menus\\menu_tipo_de_pagamento.txt";
-const char menu_fullprice[100] = "resources\\menus\\menu_entrada_normal.txt";
+const char menu_main[100] = "resources\\menus\\primary\\main.txt";
+const char menu_buy_tickets[100] = "resources\\menus\\primary\\buy_ticket.txt";
+const char menu_themes[100] = "resources\\menus\\primary\\theme_list.txt";
+const char menu_payment[100] = "resources\\menus\\primary\\payment_type.txt";
 
-const char submenu_junior_entry[100] = "resources\\menus\\submenu_entrada_crianca.txt";
-const char submenu_senior_entry[100] = "resources\\menus\\submenu_entrada_idoso.txt";
-const char submenu_disabled_person_entry[100] = "resources\\menus\\submenu_entrada_deficiente.txt";
-const char submenu_student_entry[100] = "resources\\menus\\submenu_entrada_estudante.txt";
+const char menu_halfprice_entry[100] = "resources\\menus\\secundary\\entry\\half_price\\half_price_entry.txt";
+const char menu_free_entry[100] = "resources\\menus\\secundary\\entry\\free\\free_entry.txt";
+const char menu_fullprice[100] = "resources\\menus\\secundary\\entry\\full_price_entry.txt";
 
-const char menu_santos_dumont_arts[100] = "resources\\menus\\artes_santos_dumont_obras.txt";
-const char menu_olimpic_games_arts[100] = "resources\\menus\\artes_jogos_olimpicos_obras.txt";
-const char menu_modern_week_arts[100] = "resources\\menus\\artes_semana_arte_moderna.txt";
 
-const char menu_theme4[100] = "resources\\menus\\artes_tema_a_ser_definido.txt";
+const char submenu_junior_entry[100] = "resources\\menus\\secundary\\entry\\free\\junior_entry.txt";
+const char submenu_senior_entry[100] = "resources\\menus\\secundary\\entry\\free\\senior_entry.txt";
+const char submenu_disabled_person_entry[100] = "resources\\menus\\secundary\\entry\\half_price\\disabled_person.txt";
+const char submenu_student_entry[100] = "resources\\menus\\secundary\entry\\half_price\\student.txt";
 
-const char menu_next_art[100] = "resources\\menus\\menu_proxima_arte.txt";
-const char menu_back[100] = "resources\\menus\\menu_voltar.txt";
+const char menu_santos_dumont_arts[100] = "resources\\menus\\secundary\\themes\\santos_dumont.txt";
+const char menu_olimpic_games_arts[100] = "resources\\menus\\secundary\\themes\\jogos_olimpicos.txt";
+const char menu_modern_week_arts[100] = "resources\\menus\\secundary\\themes\\semana_arte_morderna.txt";
+
+const char menu_theme4[100] = "resources\\menus\\secundary\\themes\\tema_a_ser_definido.txt";
+
+const char menu_next_art[100] = "resources\\menus\\tertiary\\next_art.txt";
+const char menu_back[100] = "resources\\menus\\tertiary\\back.txt";
 
 /* Lista de caminhos de arquivos 'ansi' */
 /* Artes semana da arte moderna */
@@ -37,7 +39,7 @@ const char art_santos_dumont2[100] = "resources\\santos_dumont_150_anos\\";
 const char art_santos_dumont3[100] = "resources\\santos_dumont_150_anos\\";
 const char art_santos_dumont4[100] = "resources\\santos_dumont_150_anos\\";
 
-/* Artes jogos olímpicos 2024 */
+/* Artes jogos olï¿½mpicos 2024 */
 const char art_olimpic_games1[100] = "resources\\jogos_olimpicos_2024\\";
 const char art_olimpic_games2[100] = "resources\\jogos_olimpicos_2024\\";
 const char art_olimpic_games3[100] = "resources\\jogos_olimpicos_2024\\";
@@ -135,9 +137,9 @@ void register_user(char name[50]) {
 }
 
 /* Carrega uma arte de acordo com o seu tema */
-int load_art(int theme, int art) {
+int load_art(char theme, int art) {
 	switch (theme) {
-	case 0:
+	case '0':
 		switch (art) {
 		case 0:
 			read_file(art_a_negra);
@@ -152,7 +154,7 @@ int load_art(int theme, int art) {
 			read_file(art_operarios);
 			break;
 		}
-	case 1:
+	case '1':
 		switch (art) {
 		case 0:
 			read_file(art_olimpic_games1);
@@ -167,7 +169,7 @@ int load_art(int theme, int art) {
 			read_file(art_olimpic_games4);
 			break;
 		}
-	case 2:
+	case '2':
 		switch (art) {
 		case 0:
 			read_file(art_santos_dumont);
@@ -182,7 +184,7 @@ int load_art(int theme, int art) {
 			read_file(art_santos_dumont4);
 			break;
 		}
-	case 3:
+	case '3':
 		switch (art) {
 		case 0:
 			read_file(art_tema_a_ser_definido1);

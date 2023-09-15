@@ -6,6 +6,17 @@
 #include "file_management.h"
 #include "validation.h"
 
+char keyboard_check() {
+	char key;
+
+	while (1) {
+		if (_kbhit()) {
+			key = _getch();		
+			return key;
+		}
+	}
+}
+
 void three_sec_timer() {
 	int time = 0;
 	while (time < 3) {
@@ -88,8 +99,7 @@ int evaluate_art(char art_name[21]) {
 	}
 }
 
-
-int switch_arts(int theme) {
+int switch_arts(char theme) {
 	char key;
 	int art = 0;
 
@@ -106,43 +116,39 @@ int switch_arts(int theme) {
 			}
 		}
 	}
+
 	return 0;
 }
 
 void select_theme_menu_option() {
 	system("cls");
-	int theme;
 
 	/* Imprime a lista de temas */
 	read_file(menu_themes);
 
 	printf("Escolha uma op��o: ");
-	scanf_s("%d", &theme);
 
-	if (theme > 4) {
+	if (keyboard_check() > '4') {
 		printf("\nOpção invalida!");
 		select_theme_menu_option();
 	}
 	else {
-		switch_arts(theme);
+		switch_arts(keyboard_check());
 	}
 }
 
 int select_art(int theme) {
-	int art;
-
 	printf("Escolha uma opção: ");
-	scanf_s("%d", &art);
 
-	switch (art) {
-	case 1:
-		switch_arts(theme, art);
-	case 2:
+	switch (keyboard_check()) {
+	case '1':
+		switch_arts(theme);
+	case '2':
 		/* Volta para o menu de temas */
 		select_theme_menu_option();
-	case 3:
+	case '3':
 		/* Finaliza o programa */
-		return 0;
+		exit(200);
 	default:
 		printf("\nOpção invalida!");
 	}
@@ -186,31 +192,27 @@ int pix_payment() {
 }
 
 int select_payment_menu() {
-	system("cls");
-	int choice;
+	while (1) {
+		system("cls");
+		int choice;
 
-	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
+		printf("Escolha uma opção: ");
 
-	switch (choice) {
-	case 1:
-		if (card_payment()) {
-			select_theme_menu_option();
+		switch (keyboard_check()) {
+		case '1':
+			if (card_payment()) {
+				select_theme_menu_option();
+			}
+			continue;
+		case '2':
+			if (pix_payment()) {
+				select_theme_menu_option();
+			}
+			continue;
+		case '3': select_ticket_type();
+		default:
+			return 0;
 		}
-		else {
-			select_payment_menu();
-		}
-	case 2:
-		if (pix_payment()) {
-			select_theme_menu_option();
-		}
-		else {
-			select_payment_menu();
-		}
-	case 3:
-		select_ticket_type();
-	default:
-		return 0;
 	}
 }
 
@@ -343,89 +345,67 @@ int disabled_ticket() {
 
 /* Função para escolher uma op��o do menu principal */
 int select_main_menu_option() {
-	system("cls");
-	int choice;
-
-	/* Imprime o menu principal */
-	read_file(menu_main);
-
-	printf("Escolha uma opção: ");
-	scanf_s("%d", &choice);
-
-	switch (choice) {
-	case 1:
-		/* Abre menu de ingressos */
-		select_ticket_type();
-		break;
-	case 2:
-		/* Imprime lista de temas */
+	while (1) {
 		system("cls");
-		read_file(menu_themes);
-		read_file(menu_back);
 
-		char key;
+		/* Imprime o menu principal */
+		read_file(menu_main);
+		printf("Escolha uma opção: ");
 
-		while (1) {
-			if (_kbhit()) {
-				key = _getch();
-				if (key == 'q') {
-					select_main_menu_option();
-				}
+		switch (keyboard_check()) {
+		case '1': select_ticket_type();
+		case '2':
+			/* Imprime lista de temas */
+			system("cls");
+			read_file(menu_themes);
+			read_file(menu_back);
+
+			if (keyboard_check() == 'q') {
+				continue;
 			}
+		case '3':
+			/* Finaliza o programa */
+			printf("\nObrigado por usar o sistema do museu!");
+			exit(200);
+		default:
+			printf("\nOpção invalida!");
+			three_sec_timer();
 		}
-	case 3:
-		/* Finaliza o programa */
-		printf("\nObrigado por usar o sistema do museu!");
-		return 0;
-	default:
-		printf("\nOpção invalida!");
 	}
 }
 
 int select_ticket_type() {
-	int choice;
-
 	while (1) {
 		system("cls");
 		read_file(menu_buy_tickets);
 
 		printf("Escolha uma opção: ");
-		scanf_s("%d", &choice);
 
-		switch (choice) {
-		case 1:
+		switch (keyboard_check()) {
+		case '1':
 			if (full_price_ticket()) {
 				select_payment_menu();
 			}
-			else {
-				select_ticket_type();
-			}
-		case 2:
+			continue;
+		case '2':
 			if (student_ticket()) {
 				select_payment_menu();
 			}
-			else {
-				select_ticket_type();
-			}
-		case 3:
+			continue;
+		case '3':
 			if (senior_ticket()) {
 				select_payment_menu();
 			}
-			else {
-				select_ticket_type();
-			}
-		case 4:
+			continue;
+		case '4':
 			if (disabled_ticket()) {
 				select_payment_menu();
 			}
-			else {
-				select_ticket_type();
-			}
-		case 5:
-			/* Volta para o menu principal */
-			select_main_menu_option();
-			break;
+			continue;
+		case '5':
+			continue;
 		default:
+			three_sec_timer();
 			printf("\nOpção inválida!");
 		}
 	}
