@@ -127,17 +127,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arts.c" />
     <ClCompile Include="calc.c" />
+    <ClCompile Include="entry.c" />
     <ClCompile Include="error_handling.c" />
-    <ClCompile Include="file_management.c" />
+    <ClCompile Include="files.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="user_interaction.c" />
+    <ClCompile Include="menu.c" />
+    <ClCompile Include="misc.c" />
+    <ClCompile Include="payment.c" />
+    <ClCompile Include="user.c" />
     <ClCompile Include="validation.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="file_management.h" />
+    <ClInclude Include="arts.h" />
+    <ClInclude Include="entry.h" />
+    <ClInclude Include="files.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="misc.h" />
+    <ClInclude Include="payment.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="user_interaction.h" />
+    <ClInclude Include="resource1.h" />
+    <ClInclude Include="user.h" />
     <ClInclude Include="validation.h" />
   </ItemGroup>
   <ItemGroup>

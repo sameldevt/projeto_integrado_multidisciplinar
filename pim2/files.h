@@ -1,6 +1,6 @@
 #pragma once
-#ifndef FILE_MANAGEMENT
-#define FILE_MANAGEMENT
+#ifndef FILES
+#define FILES
 
 /* Lista de caminhos de arquivos 'menu' */
 const char menu_main[100];
@@ -77,20 +77,17 @@ const char survey_tema_a_ser_definido3[100];
 const char survey_tema_a_ser_definido4[100];
 
 /* Lista de arquivos .csv */
-const char csv_users[100];
+const char csv_users[100] = "resources\\csv_files\\register\\users.csv";
 const char csv_user_feedback[100];
 const char csv_survey_sumary[100];
 
-void read_file(char file_path[100]);
+/* Função para abrir e ler um arquivo a partir do caminho informado */
+void readFile(char file_path[100]);
 
-void rewrite_file(char file_path[100], char input[]);
+/* Função para abrir e reescrever um arquivo a partir do caminho informado */
+void writeFile(char file_path[100], char input[]);
 
-void append_to_file(char file_path[100], char input[]);
-
-void register_user(char name[50]);
-
-int load_art(int theme, int art);
-
-int load_survey(int theme, int question);
+/* Função para acrescentar uma linha ao arquivo informado */
+void appendToFile(char file_path[100], char input[]);
 
 #endif

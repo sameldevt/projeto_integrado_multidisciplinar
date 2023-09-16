@@ -21,18 +21,36 @@
     <ClCompile Include="error_handling.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="file_management.c">
+    <ClCompile Include="files.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="validation.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="user_interaction.c">
+    <ClCompile Include="user.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="calc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="entry.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="payment.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="arts.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="file_management.h">
+    <ClInclude Include="files.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
@@ -41,7 +59,25 @@
     <ClInclude Include="validation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="user_interaction.h">
+    <ClInclude Include="user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="arts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="entry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="payment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

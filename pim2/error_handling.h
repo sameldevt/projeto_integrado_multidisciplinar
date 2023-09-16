@@ -2,6 +2,7 @@
 #ifndef ERROR_HANDLING
 #define ERROR_HANDLING
 
-int verify_file_existence(FILE** file);
+/* Função para verificar se o arquivo a ser aberto existe */
+int verifyFileExistence(FILE** file);
 
 #endif

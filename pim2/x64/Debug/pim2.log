@@ -1,28 +1,52 @@
-﻿  user_interaction.c
-C:\ws-vs\pim2\pim2\user_interaction.c(24,3): warning C4013: 'Sleep' undefined; assuming extern returning int
-C:\ws-vs\pim2\pim2\user_interaction.c(46,35): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(59,9): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
-C:\ws-vs\pim2\pim2\user_interaction.c(73,15): warning C4047: '>': 'char [101]' differs in levels of indirection from 'int'
-C:\ws-vs\pim2\pim2\user_interaction.c(81,36): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(91,35): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(111,28): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(126,23): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(128,9): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
-C:\ws-vs\pim2\pim2\user_interaction.c(211,13): warning C4013: 'select_ticket_type' undefined; assuming extern returning int
-C:\ws-vs\pim2\pim2\user_interaction.c(196,7): warning C4101: 'choice': unreferenced local variable
-C:\ws-vs\pim2\pim2\user_interaction.c(222,26): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(227,5): warning C4013: 'validate_name' undefined; assuming extern returning int
-C:\ws-vs\pim2\pim2\user_interaction.c(242,33): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(251,29): warning C4047: 'function': 'int' differs in levels of indirection from 'char [51]'
-C:\ws-vs\pim2\pim2\user_interaction.c(251,29): warning C4024: 'validate_student_id': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\user_interaction.c(251,35): warning C4020: 'validate_student_id': too many actual parameters
-C:\ws-vs\pim2\pim2\user_interaction.c(268,32): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(295,32): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(323,41): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(351,22): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(359,25): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(360,23): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(379,29): warning C4090: 'function': different 'const' qualifiers
-C:\ws-vs\pim2\pim2\user_interaction.c(50): warning C4716: 'answer_survey': must return a value
-C:\ws-vs\pim2\pim2\user_interaction.c(154): warning C4715: 'select_art': not all control paths return a value
-  pim2.vcxproj -> C:\ws-vs\pim2\x64\Debug\pim2.exe
+﻿  entry.c
+C:\ws-vs\pim2\pim2\entry.c(16,25): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\entry.c(33,32): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\entry.c(57,31): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\entry.c(80,31): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\entry.c(102,40): warning C4090: 'function': different 'const' qualifiers
+  files.c
+C:\ws-vs\pim2\pim2\files.c(18,41): warning C4129: 'e': unrecognized character escape sequence
+C:\ws-vs\pim2\pim2\files.c(80,12): error C2374: 'csv_users': redefinition; multiple initialization
+C:\ws-vs\pim2\pim2\files.h(80,12): message : see declaration of 'csv_users'
+C:\ws-vs\pim2\pim2\files.c(88,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\files.c(92,39): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(92,39): warning C4024: 'fgets': different types for formal and actual parameter 3
+C:\ws-vs\pim2\pim2\files.c(96,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(96,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\files.c(103,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\files.c(105,15): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(105,15): warning C4024: 'fputs': different types for formal and actual parameter 2
+C:\ws-vs\pim2\pim2\files.c(107,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(107,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\files.c(115,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\files.c(117,2): warning C4013: 'fsprintf' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\files.c(119,10): warning C4047: 'function': 'FILE *const ' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(119,10): warning C4024: 'fprintf': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\files.c(121,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(121,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+  menu.c
+C:\ws-vs\pim2\pim2\menu.c(29,13): warning C4013: 'selectTicketType' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(14,7): warning C4101: 'choice': unreferenced local variable
+C:\ws-vs\pim2\pim2\menu.c(40,22): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\menu.c(42,9): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+C:\ws-vs\pim2\pim2\menu.c(46,3): warning C4013: 'selectThemeMenuOption' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(49,3): warning C4013: 'switch_arts' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(76,21): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\menu.c(80,13): warning C4013: 'select_ticket_type' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(84,24): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\menu.c(85,22): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\menu.c(104,28): warning C4090: 'function': different 'const' qualifiers
+C:\ws-vs\pim2\pim2\menu.c(110,8): warning C4013: 'verifyFullPricePayment' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(111,5): warning C4013: 'select_payment_menu' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(115,8): warning C4013: 'student_ticket' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(120,8): warning C4013: 'senior_ticket' undefined; assuming extern returning int
+C:\ws-vs\pim2\pim2\menu.c(125,8): warning C4013: 'disabled_ticket' undefined; assuming extern returning int
+  validation.c
+C:\ws-vs\pim2\pim2\validation.c(30,10): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+C:\ws-vs\pim2\pim2\validation.c(40,10): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+C:\ws-vs\pim2\pim2\validation.c(45,10): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+  Generating Code...
+C:\ws-vs\pim2\pim2\validation.c(26): warning C4716: 'vaslidateDisabledPersonId': must return a value
+C:\ws-vs\pim2\pim2\menu.c(68): warning C4715: 'selectArtOption': not all control paths return a value
+C:\ws-vs\pim2\pim2\entry.c(62): error C4700: uninitialized local variable 'age' used
+C:\ws-vs\pim2\pim2\entry.c(85): error C4700: uninitialized local variable 'age' used

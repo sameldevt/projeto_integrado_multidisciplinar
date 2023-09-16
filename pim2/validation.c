@@ -7,7 +7,7 @@
   da lei 9.349/96, para estudantes de educa��o infantil, ensino fundamental,
   ensino m�dio e ensino superior, incluindo p�s gradua��o.
 */
-int validate_student_id(int student_id) {
+int validateStudentId(int student_id) {
 	if (sizeof(student_id) > 8) {
 		return 0;
 	}
@@ -21,14 +21,11 @@ int validate_student_id(int student_id) {
  Essa modalidade de documento, no entanto, � emitida de forma gratuita.
  */
 
-int validate_disabled_person_id(int disabled_person_id) {
-	if (sizeof(disabled_person_id) > 11) {		
-		return 0;
-	}
-	return 1;
+int vaslidateDisabledPersonId(int disabled_person_id) {
+	
 }
 
-int validate_pix_payment(float value) {
+int validatePixPayment(float value) {
 	if (value < 20.0) {
 		perror("Saldo insufici�nte");
 		return 0;
@@ -38,7 +35,7 @@ int validate_pix_payment(float value) {
 	return 1;
 }
 
-int validate_card_payment(char card_holder[101], int card_number, int identification_number) {
+int validateCardPayment(char card_holder[101], int card_number, int identification_number) {
 	if (sizeof(card_number) < 12 && sizeof(card_number) > 12) {
 		perror("O n�mero do cart�o informado n�o � v�lido");
 		return 0;
@@ -49,13 +46,5 @@ int validate_card_payment(char card_holder[101], int card_number, int identifica
 		return 0;
 	}
 
-	return 1;
-}
-
-int validate_name(char name[51]) {
-	if (sizeof(name) > 51) {
-		perror("Seu nome é muito grande!");
-		return 0;
-	}
 	return 1;
 }
