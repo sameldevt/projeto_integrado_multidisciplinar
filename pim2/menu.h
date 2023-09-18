@@ -9,7 +9,7 @@ int selectPaymentOption();
 void selectThemeOption();
 
 /* Função para selecionar uma arte no menu da sua respectiva arte */
-int selectArtOption(int theme);
+int selectArtOption(char theme);
 
 /* Função para selecionar uma opção do menu principal */
 int selectMainMenuOption();

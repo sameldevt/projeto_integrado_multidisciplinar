@@ -1,6 +1,10 @@
-C:\ws-vs\pim2\pim2\calc.c;C:\ws-vs\pim2\pim2\x64\Debug\calc.obj
-C:\ws-vs\pim2\pim2\error_handling.c;C:\ws-vs\pim2\pim2\x64\Debug\error_handling.obj
-C:\ws-vs\pim2\pim2\file_management.c;C:\ws-vs\pim2\pim2\x64\Debug\file_management.obj
-C:\ws-vs\pim2\pim2\main.c;C:\ws-vs\pim2\pim2\x64\Debug\main.obj
-C:\ws-vs\pim2\pim2\user_interaction.c;C:\ws-vs\pim2\pim2\x64\Debug\user_interaction.obj
-C:\ws-vs\pim2\pim2\validation.c;C:\ws-vs\pim2\pim2\x64\Debug\validation.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\arts.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\arts.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\calc.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\calc.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\entry.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\entry.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\error_handling.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\error_handling.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\files.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\files.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\main.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\main.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\menu.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\menu.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\misc.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\misc.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\payment.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\payment.obj
+C:\ws-vs\projeto_integrado_multidisciplinar\pim2\user.c;C:\ws-vs\projeto_integrado_multidisciplinar\pim2\x64\Debug\user.obj

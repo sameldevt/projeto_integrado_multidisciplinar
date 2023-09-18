@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "user_interaction.h"
+#include "misc.h"
 
 /* 
  *  Projeto integrado multidiscliplinar 2 - gerenciamento de museu multitemático
@@ -16,5 +16,5 @@
  */
 
 int main() {
-	start_program();
+	startProgram();
 }

@@ -137,7 +137,6 @@
     <ClCompile Include="misc.c" />
     <ClCompile Include="payment.c" />
     <ClCompile Include="user.c" />
-    <ClCompile Include="validation.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arts.h" />
@@ -149,7 +148,6 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="user.h" />
-    <ClInclude Include="validation.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="error_handling.h" />

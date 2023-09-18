@@ -24,9 +24,6 @@
     <ClCompile Include="files.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="validation.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="user.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="validation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="user.h">

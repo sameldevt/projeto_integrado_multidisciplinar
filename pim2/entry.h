@@ -15,6 +15,6 @@ int verifySeniorEntry();
 int verifyJuniorEntry();
 
 /* Função para verificar o documento da pessoa com deficiência */
-int verifyDisabledPersonTicket();
+int verifyDisabledPersonEntry();
 
 #endif

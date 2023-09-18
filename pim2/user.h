@@ -3,6 +3,6 @@
 #define USER
 
 /* Função para registrar um usuário no sistema */
-void registerUser(char name[50]);
+int registerUser(char name[51]);
 
 #endif

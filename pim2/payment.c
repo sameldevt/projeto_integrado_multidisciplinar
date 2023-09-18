@@ -14,11 +14,12 @@ int verifyCardPayment() {
 	char card_holder[101];
 	int identification_number;
 
-	printf("Digite o nome do titular do cartão: ");
+	readFile(MENU_CARD_PAYMENT);
+	printf("   >> Titular do cartão: ");
 	scanf_s("%100s", card_holder, 101);
 
 	while (1) {
-		printf("Digite o número do seu cartão (max. 12 digitos): ");
+		printf("   >> Número do cartão: ");
 		scanf_s("%d", &card_number);
 
 		if (sizeof(card_number) < 12 && sizeof(card_number) > 12) {
@@ -31,7 +32,7 @@ int verifyCardPayment() {
 	}
 
 	while (1) {
-		printf("Digite o número de segurança do cartão: ");
+		printf("   >> Código de segurança do cartão: ");
 		scanf_s("%d", &identification_number);
 
 		if (identification_number > 3 && identification_number < 3) {
@@ -48,11 +49,13 @@ int verifyCardPayment() {
 }
 
 int verifyPixPayment() {
-	system("cls");
 	float value;
 
 	while (1) {
-		printf("Digite o valor que deseja pagar: ");
+		system("cls");
+		readFile(MENU_PIX_PAYMENT);
+
+		printf("   >> Valor: ");
 		scanf_s("%f", &value);
 		
 		if (value < 20.0) {
@@ -64,6 +67,7 @@ int verifyPixPayment() {
 		break;
 	}
 
-	printf("Pagamento feito com sucesso\n");
+	printf("Pagamento feito com sucesso");
+	threeSecTimer();
 	return 0;
 }

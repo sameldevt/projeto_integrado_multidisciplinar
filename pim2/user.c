@@ -5,11 +5,10 @@
 #include <ctype.h>
 
 #include "files.h"
-#include "validation.h"
 
-void registerUser(char name[]) {
-	char refac_name[100];
-	fsprintf(refac_name, "%s %n", strlen(name));
+/* Arquivo com funções de manipulação de usuários */
 
-	appendToFile(csv_users,refac_name);
+int registerUser(char name[51]) {
+	appendToFile(CSV_USERS, name);
+	return 0;
 }
