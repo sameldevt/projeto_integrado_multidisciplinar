@@ -1,0 +1,2 @@
+ansi\\paymentpix.ans
+ansi\\paymentpix1.ans

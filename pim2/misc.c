@@ -3,14 +3,29 @@
 #include <conio.h>
 #include <string.h>
 #include <windows.h>
+#include <locale.h>
 
 #include "menu.h"
 #include "files.h"
 
 /* Arquivo com funções de auxílio ao sistema */
 
-char keyboardCheck() {
-	char key;
+void loadLoadingScreen() {
+	FILE* fp1 = fopen(LOADING_SCREEN, "r");
+
+	char loading_screen[100];
+
+	while (fgets(loading_screen, sizeof(loading_screen), fp1) != NULL) {
+		printf(loading_screen);
+	}
+
+	fclose(fp1);
+	Sleep(3000);
+	system("cls");
+}
+
+int keyboardCheck() {
+	int key;
 
 	while (_kbhit() != 'x') {
 		key = _getch();
@@ -22,7 +37,7 @@ void threeSecTimer() {
 	int time = 0;
 	while (time < 3) {
 		printf(" .");
-		Sleep(1000);
+		Sleep(500);
 		time++;
 	}
 }
@@ -37,24 +52,22 @@ void fiveSecTimer() {
 
 void startProgram() {
 
+	// setlocale(LC_ALL, "Portuguese");
+	// resolve o problema de acentuação porem buga todo o programa
+
 	HWND consoleWindow = GetConsoleWindow();
+
 	if (consoleWindow != NULL) {
-		RECT consoleRect;
-		GetWindowRect(consoleWindow, &consoleRect);
-
-		int consoleWidth = consoleRect.right - consoleRect.left;
-		int consoleHeight = consoleRect.bottom - consoleRect.top;
-
-		int screenWidth = GetSystemMetrics(SM_CXSCREEN);
-		int screenHeight = GetSystemMetrics(SM_CYSCREEN);
-
-		int newX = (screenWidth - consoleWidth) / 2;
-		int newY = (screenHeight - consoleHeight) / 2;
-
-		MoveWindow(consoleWindow, newX, newY, consoleWidth, consoleHeight, TRUE);
+		// Maximize the console window
+		ShowWindow(consoleWindow, SW_MAXIMIZE);
 	}
 
-	readFile(MAIN_SCREEN);
-	fiveSecTimer();
+	readFile(INITIAL_SCREEN);
+	Sleep(3000);
+	
 	selectMainMenuOption();
+}
+
+void endProgram() {
+
 }

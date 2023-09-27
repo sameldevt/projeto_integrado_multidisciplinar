@@ -3,9 +3,9 @@
 #define PAYMENT
 
 /* Função que verifica a entrada de informações do cartão do usuário */
-int verifyCardPayment();
+void verifyCardPayment();
 
 /* Função que verifica a entrada de valor do usuário */
-int verifyPixPayment();
+void verifyPixPayment();
 
 #endif

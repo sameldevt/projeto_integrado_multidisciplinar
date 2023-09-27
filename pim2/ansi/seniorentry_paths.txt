@@ -1,0 +1,3 @@
+ansi\\freeentrysenior.ans
+ansi\\freeentrysenior1.ans
+ansi\\freeentrysenior2.ans

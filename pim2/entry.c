@@ -14,7 +14,7 @@ void verifyPersonEntry() {
 	char name[51];
 
 	system("cls");
-	readFile(SUBMENU_COMMON_ENTRY);
+	readFile(MENU_FULLPRICE);
 
 	printf("   >> Nome: ");
 	scanf_s("%50s", name, 51);
@@ -32,7 +32,7 @@ void verifyStudentEntry() {
 	int student_id;
 
 	system("cls");
-	readFile(SUBMENU_STUDENT_ENTRY);
+	readFile(MENU_STUDENT_ENTRY);
 
 	printf("   >> Nome: ");
 	scanf_s("%51s", name, 51);
@@ -60,7 +60,7 @@ void verifySeniorEntry() {
 	int age;
 
 	system("cls");
-	readFile(SUBMENU_SENIOR_ENTRY);
+	readFile(MENU_SENIOR_ENTRY);
 
 	printf("   >> Nome: ");
 	scanf_s("%51s", name, 51);
@@ -89,7 +89,7 @@ void verifyJuniorEntry() {
 
 	int name_length = sizeof(name) / sizeof(name[0]);
 	system("cls");
-	readFile(SUBMENU_JUNIOR_ENTRY);
+	readFile(MENU_JUNIOR_ENTRY);
 
 	printf("   >> Nome: ");
 	scanf_s("%51s", name, name_length);
@@ -117,7 +117,7 @@ void verifyDisabledPersonEntry() {
 	char name[51];
 
 	system("cls");
-	readFile(SUBMENU_DISABLED_PERSON_ENTRY);
+	readFile(MENU_DISABLED_PERSON_ENTRY);
 
 	printf("   >> Nome: ");
 	scanf_s("%51s", name, 51);

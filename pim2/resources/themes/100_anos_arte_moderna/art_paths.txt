@@ -1,0 +1,4 @@
+resources\themes\100_anos_arte_moderna\a_negra\a_negra_ansi.ans
+resources\themes\100_anos_arte_moderna\abaporu\abaporu_ansi.ans
+resources\themes\100_anos_arte_moderna\estrada_de_ferro\estrada_de_ferro_ansi.ans
+resources\themes\100_anos_arte_moderna\operarios\operarios_ansi.ans

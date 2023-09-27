@@ -4,169 +4,167 @@
 #include <string.h>
 
 #include "files.h"
+#include "misc.h"
+#include "menu.h"
 
 /* Arquivo com funções que envolvem todo o sistema de artes */
 
-int loadArt(char theme, int art) {
-	switch (theme) {
-	case '0':
-		switch (art) {
-		case 0:
-			readFile(ART_A_NEGRA);
-			break;
-		case 1:
-			readFile(ART_ABAPORU);
-			break;
-		case 2:
-			readFile(ART_ESTRADA_DE_FERRO);
-			break;
-		case 3:
-			readFile(ART_OPERARIOS);
-			break;
-		}
-	case '1':
-		switch (art) {
-		case 0:
-			readFile(ART_OLIMPIC_GAMES1);
-			break;
-		case 1:
-			readFile(ART_OLIMPIC_GAMES2);
-			break;
-		case 2:
-			readFile(ART_OLIMPIC_GAMES3);
-			break;
-		case 3:
-			readFile(ART_OLIMPIC_GAMES4);
-			break;
-		}
-	case '2':
-		switch (art) {
-		case 0:
-			readFile(ART_SANTOS_DUMONT);
-			break;
-		case 1:
-			readFile(ART_SANTOS_DUMONT2);
-			break;
-		case 2:
-			readFile(ART_SANTOS_DUMONT3);
-			break;
-		case 3:
-			readFile(ART_SANTOS_DUMONT4);
-			break;
-		}
-	case '3':
-		switch (art) {
-		case 0:
-			readFile(ART_TEMA_A_SER_DEFINIDO1);
-			break;
-		case 1:
-			readFile(ART_TEMA_A_SER_DEFINIDO2);
-			break;
-		case 2:
-			readFile(ART_TEMA_A_SER_DEFINIDO3);
-			break;
-		case 3:
-			readFile(ART_TEMA_A_SER_DEFINIDO4);
-			break;
-		}
-	}
-}
-
-int loadSurvey(int theme, int question) {
-	switch (theme) {
-	case 0:
-		switch (question) {
-		case 0:
-			readFile(SURVEY_SANTOS_DUMONT1);
-			break;
-		case 1:
-			readFile(SURVEY_SANTOS_DUMONT2);
-			break;
-		case 2:
-			readFile(SURVEY_SANTOS_DUMONT3);
-			break;
-		case 3:
-			readFile(SURVEY_SANTOS_DUMONT4);
-			break;
-		}
-	case 1:
-		switch (question) {
-		case 0:
-			readFile(SURVEY_OLIMPIC_GAMES1);
-			break;
-		case 1:
-			readFile(SURVEY_OLIMPIC_GAMES2);
-			break;
-		case 2:
-			readFile(SURVEY_OLIMPIC_GAMES3);
-			break;
-		case 3:
-			readFile(SURVEY_OLIMPIC_GAMES4);
-			break;
-		}
-	case 2:
-		switch (question) {
-		case 0:
-			readFile(SURVEY_MODERN_WEEK1);
-			break;
-		case 1:
-			readFile(SURVEY_MODERN_WEEK2);
-			break;
-		case 2:
-			readFile(SURVEY_MODERN_WEEK3);
-			break;
-		case 3:
-			readFile(SURVEY_MODERN_WEEK4);
-			break;
-		}
-	case 3:
-		switch (question) {
-		case 0:
-			readFile(SURVEY_TEMA_A_SER_DEFINIDO1);
-			break;
-		case 1:
-			readFile(SURVEY_TEMA_A_SER_DEFINIDO2);
-			break;
-		case 2:
-			readFile(SURVEY_TEMA_A_SER_DEFINIDO3);
-			break;
-		case 3:
-			readFile(SURVEY_TEMA_A_SER_DEFINIDO4);
-			break;
-		}
-	}
-}
-
-void registerArtFeedback(char file_path[100], char feedback[201]) {
+void registerArtFeedback(char art[100], int feedback) {
 	FILE** file_pointer;
 
-	file_pointer = fopen(file_path, "a");
+	file_pointer = fopen(art, "a");
 
 	fprintf(file_pointer, feedback);
 
 	fclose(file_pointer);
 }
 
-int answerSurvey(int theme, char survey[51]) {
-	int option;
-	char answer[101];
+void loadSurvey(char art[100]) {
+	char survey_path[100];
+	char survey[256];
+	int aux = 0;
+	int value = 0;
 
-	int survey_count = 5;
-	int question = 0;
+	FILE* fp1 = fopen(art, "r");
 
-	while (question < survey_count) {
-		loadSurvey(theme, question);
-		printf("\nDigite uma opção: ");
-		scanf_s("%d", &option);
+	while (fgets(survey_path, sizeof(survey_path), fp1) != NULL) {
 
-		scanf_s("%100s", answer, 101);
+		/* Substitui '\n' por '\0' */
+		size_t length = strlen(survey_path);
+		if (length > 0 && survey_path[length - 1] == '\n') {
+			survey_path[length - 1] = '\0';
+		}
 
-		system("cls");
-		sprintf(answer, "%d,", option);
-		appendToFile(CSV_SURVEY_SUMARY, answer);
+		FILE* fp2 = fopen(survey_path, "r");
 
-		question++;
+		if (fp2 == NULL) {
+			perror("Error when attempting to open the file!");
+			exit(1);
+		}
+
+		while (fgets(survey, sizeof(survey), fp2) != NULL) {
+			printf(survey);
+		}
+
+		fclose(fp2);
+
+		int key;
+
+		if (key = _getch()) {
+			switch (key) {
+				/* Tecla 1 */
+			case 49:
+				value += 10;
+				break;
+				/* Tecla 2 */
+			case 50:
+				value += 20;
+				break;
+				/* Tecla 3 */
+			case 51:
+				value += 30;
+				break;
+				/* Tecla 4 */
+			case 52:
+				value += 40;
+				break;
+				/* Tecla 5 */
+			case 53:
+				value += 50;
+				break;
+			}
+		}
+		continue;
 	}
+
+	fclose(fp1);
+
+	int result = value / 5;
+	registerArtFeedback(art, result);
+
+	while (1) {
+		system("cls");
+		printf("Deseja continuar? ");
+
+		int option = keyboardCheck();
+
+		switch (option) {
+		case 49:
+			selectThemeOption();
+			break;
+		case 50:
+			readFile(FINAL_SCREEN);
+			exit(0);
+		default:
+			printf("Opção inválida!\n");
+			threeSecTimer();
+			continue;
+		}
+	}
+}
+
+void loadArts(char theme[100]) {
+	system("cls");
+	char art_path[100];
+	char art[256];
+	int aux = 0;
+	int key;
+
+	FILE* fp1 = fopen(theme, "r");
+
+	while (fgets(art_path, sizeof(art_path), fp1) != NULL) {
+
+		/* Substitui '\n' por '\0' */
+		size_t length = strlen(art_path);
+		if (length > 0 && art_path[length - 1] == '\n') {
+			art_path[length - 1] = '\0';
+		}
+
+		FILE* fp2 = fopen(art_path, "r");
+
+		if (fp2 == NULL) {
+			perror("Error when attempting to open the file!");
+			exit(1);
+		}
+
+		while (fgets(art, sizeof(art), fp2) != NULL) {
+			printf(art);
+		}
+
+		fclose(fp2);
+
+		if (key = _getch()) {
+			switch (key) {
+			/* Letra 'Q'*/
+			case 81:
+			case 113:
+				loadSurvey(art);
+				break;
+			/* Código especial para setas */
+			case 224:
+				/* Obtém o código da seta */
+				key = _getch();
+				switch (key) {
+				case 77:
+					system("cls");
+					if (aux == 3) {
+						// retorna para o inicio do arquivo fp1
+						fseek(fp1, 0, SEEK_SET);
+						aux = 0;
+						break;
+					}
+					aux++;
+					break;
+				}
+			default:
+				printf("tecla invalida");
+				threeSecTimer();
+				break;
+			}
+		}
+	continue;
+	}
+	fclose(fp1);
 }
 
 int appraiseArt(char art_name[21]) {
@@ -213,23 +211,4 @@ int appraiseArt(char art_name[21]) {
 		printf("Opção inválida!");
 		return 1;
 	}
-}
-
-int browseBetweenArts(char theme) {
-	char key;
-	int art = 0;
-
-	while (_kbhit() != 'q') {
-		key = _getch();
-		if (key == '.') {
-			loadArt(theme, art);
-			readFile(MENU_NEXT_ART);
-			art++;
-			if (art == 3) {
-				art = 0;
-			}
-		}
-	}
-
-	return 0;
 }

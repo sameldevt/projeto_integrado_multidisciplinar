@@ -11,39 +11,51 @@
 #include "arts.h"
 
 void selectThemeOption() {
-	char key;
-	system("cls");
-	readFile(MENU_THEMES);
-
-	printf("Escolha uma opção: ");
-
-	while(1){
-		key = keyboardCheck();
-		if (key > '4') {
-			printf("\nOpção invalida!");
-			continue;
-		}
-		break;
-	}
-	browseBetweenArts(key);
-}
-
-int selectArtOption(char theme) {
-	char key;
+	int theme;
 
 	while (1) {
 		system("cls");
-		printf("Escolha uma opção: ");
+		readFile(MENU_THEMES);
+
+		int key = keyboardCheck();
+
+		switch (key) {
+		case 49:
+			loadArts(ARTS_MODERN_WEEK);
+			break;
+		case 50:
+			loadArts(ARTS_SANTOS_DUMONT);
+			break;
+		case 51:
+			loadArts(ARTS_OLIMPIC_GAMES);
+			break;
+		case 52:
+			loadArts(ARTS_TECNOLOGY_SECURITY);
+			break;
+		default:
+			printf("Opção inválidad!");
+			threeSecTimer();
+			continue;
+		}
+	}
+}
+
+void selectArtOption(char theme) {
+	int key;
+
+	while (1) {
+		system("cls");
 		key = keyboardCheck();
 
 		switch (key) {
-		case '1':
-			browseBetweenArts(theme);
-		case '2':
+		case 49:
+			loadArts(theme);
+		case 50:
 			/* Volta para o menu de temas */
 			selectThemeOption();
-		case '3':
+		case 51:
 			/* Finaliza o programa */
+			//readFile(GOODBYE_SCREEN);
 			exit(0);
 		default:
 			printf("\nOpção invalida!");
@@ -52,28 +64,19 @@ int selectArtOption(char theme) {
 	}
 }
 
-int selectPaymentOption() {
-	char option;
+void selectPaymentOption() {
+	int key;
 
 	while (1) {
 		system("cls");
 		readFile(MENU_PAYMENT);
 
-		printf("Escolha uma opção: ");
-		option = keyboardCheck();
+		key = keyboardCheck();
 
-		switch (option) {
-		case '1':
-			if (verifyCardPayment()) {
-				selectThemeOption();
-			}
-			continue;
-		case '2':
-			if (verifyPixPayment()) {
-				selectThemeOption();
-			}
-			continue;
-		case '3': selectTicketMenuOption();
+		switch (key) {
+		case 49: verifyCardPayment(); 
+		case 50: verifyPixPayment(); 
+		case 51: selectTicketMenuOption();
 		default:
 			printf("\nOpção inválida!");
 			threeSecTimer();
@@ -82,18 +85,18 @@ int selectPaymentOption() {
 	}
 }
 
-int selectTicketMenuOption() {
+void selectTicketMenuOption() {
+	int key;
 	while (1) {
 		system("cls");
 		readFile(MENU_BUY_TICKETS);
 
-		printf("Escolha uma opção: ");
-
-		switch (keyboardCheck()) {
-		case '1': verifyPersonEntry();
-		case '2': verifyStudentEntry();
-		case '3': verifySeniorEntry();
-		case '4': verifyDisabledPersonEntry();
+		key = keyboardCheck();
+		switch (key) {
+		case 49: verifyPersonEntry();
+		case 50: verifyStudentEntry();
+		case 51: verifySeniorEntry();
+		case 52: verifyDisabledPersonEntry();
 		default:		
 			printf("\nOpção inválida!");
 			threeSecTimer();
@@ -102,33 +105,31 @@ int selectTicketMenuOption() {
 	}
 }
 
-int selectMainMenuOption() {
-	char option;
+void selectMainMenuOption() {
+	int option;
 
 	while (1) {
 		system("cls");
 
 		readFile(MENU_MAIN);
-		printf("Escolha uma opção: ");
 		option = keyboardCheck();
 
 		switch (option) {
-		case '1': selectTicketMenuOption();
-		case '2':
-			system("cls");
-			readFile(MENU_THEMES);
-			readFile(MENU_BACK);
-
-			if (keyboardCheck() == 'q') {
-				continue;
-			}
-		case '3':
-			printf("\nObrigado por usar o sistema do museu!");
+		case 49: selectTicketMenuOption();
+		case 50:
+			do {
+				system("cls");
+				readFile(MENU_THEMES);
+			} while (keyboardCheck() != 113);
+			continue;
+		case 51:
+			//readFile(GOODBYE_SCREEN);
 			threeSecTimer();
-			exit(0);
+			exit(0); 
 		default:
 			printf("\nOpção invalida!");
 			threeSecTimer();
+			continue;
 		}
 	}
 }

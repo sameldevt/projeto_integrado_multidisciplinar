@@ -3,7 +3,7 @@
 #define MISC
 
 /* Função para verificar a entrada do usuário */
-char keyboardCheck();
+int keyboardCheck();
 
 /* Função temporizador de 3 segundos */
 void threeSecTimer();
@@ -14,4 +14,6 @@ void fiveSecTimer();
 /* Função para iniciar o programa */
 void startProgram();
 
+/* Função para encerrar o programa */
+void endProgram();
 #endif

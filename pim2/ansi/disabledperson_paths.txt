@@ -1,0 +1,3 @@
+ansi\\halfentrydisabledperson.ans
+ansi\\halfentrydisabledperson1.ans
+ansi\\halfentrydisabledperson2.ans

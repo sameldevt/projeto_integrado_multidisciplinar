@@ -1,3 +1,44 @@
-﻿  misc.c
-C:\ws-vs\projeto_integrado_multidisciplinar\pim2\misc.c(19): warning C4715: 'keyboardCheck': not all control paths return a value
-  pim2.vcxproj -> C:\ws-vs\projeto_integrado_multidisciplinar\x64\Debug\pim2.exe
+﻿  arts.c
+C:\ws-vs\pim2\pim2\arts.c(15,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\arts.c(17,10): warning C4047: 'function': 'FILE *const ' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(17,10): warning C4024: 'fprintf': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(17,24): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'int'
+C:\ws-vs\pim2\pim2\arts.c(17,24): warning C4024: 'fprintf': different types for formal and actual parameter 2
+C:\ws-vs\pim2\pim2\arts.c(19,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(19,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(175,9): warning C4566: character represented by universal-character-name '\uFFFD' cannot be represented in the current code page (1252)
+C:\ws-vs\pim2\pim2\arts.c(189,15): warning C4047: '>': 'char [101]' differs in levels of indirection from 'int'
+C:\ws-vs\pim2\pim2\arts.c(196,43): warning C4047: 'function': 'int' differs in levels of indirection from 'char [201]'
+C:\ws-vs\pim2\pim2\arts.c(196,43): warning C4024: 'registerArtFeedback': different types for formal and actual parameter 2
+C:\ws-vs\pim2\pim2\arts.c(205,42): warning C4047: 'function': 'int' differs in levels of indirection from 'char [201]'
+C:\ws-vs\pim2\pim2\arts.c(205,42): warning C4024: 'registerArtFeedback': different types for formal and actual parameter 2
+  calc.c
+  entry.c
+  error_handling.c
+  files.c
+C:\ws-vs\pim2\pim2\files.c(8,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\files.c(12,39): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(12,39): warning C4024: 'fgets': different types for formal and actual parameter 3
+C:\ws-vs\pim2\pim2\files.c(16,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(16,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\files.c(23,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\files.c(25,15): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(25,15): warning C4024: 'fputs': different types for formal and actual parameter 2
+C:\ws-vs\pim2\pim2\files.c(27,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(27,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\files.c(35,15): warning C4047: '=': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\files.c(39,10): warning C4047: 'function': 'FILE *const ' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(39,10): warning C4024: 'fprintf': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\files.c(41,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\files.c(41,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+  main.c
+  menu.c
+C:\ws-vs\pim2\pim2\menu.c(14,6): warning C4101: 'theme': unreferenced local variable
+C:\ws-vs\pim2\pim2\menu.c(52,13): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
+C:\ws-vs\pim2\pim2\menu.c(52,13): warning C4024: 'loadArts': different types for formal and actual parameter 1
+  misc.c
+  payment.c
+  user.c
+  Generating Code...
+C:\ws-vs\pim2\pim2\misc.c(34): warning C4715: 'keyboardCheck': not all control paths return a value
+  pim2.vcxproj -> C:\ws-vs\pim2\x64\Debug\pim2.exe

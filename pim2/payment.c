@@ -5,25 +5,28 @@
 
 #include "files.h"
 #include "misc.h"
+#include "menu.h"
 
 /* Arquivo com funções para verificação de pagamento */
 
-int verifyCardPayment() {
-	system("cls");
+void verifyCardPayment() {
 	int card_number;
 	char card_holder[101];
 	int identification_number;
 
+	system("cls");
+
 	readFile(MENU_CARD_PAYMENT);
-	printf("   >> Titular do cartão: ");
+	printf("   >> Titular do cartao: ");
 	scanf_s("%100s", card_holder, 101);
 
 	while (1) {
-		printf("   >> Número do cartão: ");
+		printf("   >> Numero do cartao: ");
 		scanf_s("%d", &card_number);
 
-		if (sizeof(card_number) < 12 && sizeof(card_number) > 12) {
-			perror("O número do cartão informado não é válido");
+		if (sizeof(card_number) < 12 || sizeof(card_number) > 12) {
+			printf("O número do cartão informado não é válido!\n");
+			printf("O número do seu cartão precisa ter 12 digitos!\n");
 			threeSecTimer();
 			system("cls");
 			continue;
@@ -35,8 +38,9 @@ int verifyCardPayment() {
 		printf("   >> Código de segurança do cartão: ");
 		scanf_s("%d", &identification_number);
 
-		if (identification_number > 3 && identification_number < 3) {
-			perror("Código de segurança inválido");
+		if (sizeof(identification_number) > 3 && sizeof(identification_number < 3)) {
+			printf("Código de segurança inválido");
+			printf("O código de segurança do seu cartão precisa ter 3 digitos!\n");
 			threeSecTimer();
 			system("cls");
 			continue;
@@ -45,10 +49,11 @@ int verifyCardPayment() {
 	}
 	
 	printf("Pagamento feito com sucesso\n");
-	return 0;
+	threeSecTimer();
+	selectThemeOption();
 }
 
-int verifyPixPayment() {
+void verifyPixPayment() {
 	float value;
 
 	while (1) {
@@ -58,8 +63,9 @@ int verifyPixPayment() {
 		printf("   >> Valor: ");
 		scanf_s("%f", &value);
 		
-		if (value < 20.0) {
-			perror("Saldo insuficiênte");
+		if (value < 10.0) {
+			printf("Valor informado não é suficiente para comprar um ingresso!\n");
+			printf("O ingresso custa R$10,00\n");
 			threeSecTimer();
 			system("cls");
 			continue;
@@ -69,5 +75,5 @@ int verifyPixPayment() {
 
 	printf("Pagamento feito com sucesso");
 	threeSecTimer();
-	return 0;
+	selectThemeOption();
 }
