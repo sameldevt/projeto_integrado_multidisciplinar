@@ -1,3 +1,0 @@
-ansi\\halfentrystudent.ans
-ansi\\halfentrystudent1.ans
-ansi\\halfentrystudent2.ans

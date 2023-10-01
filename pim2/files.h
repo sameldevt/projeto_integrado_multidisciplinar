@@ -2,60 +2,69 @@
 #ifndef FILES
 #define FILES
 
-#define CSV_USERS "resources\\csv_files\\users.csv"
+#define CSV_USERS "resources\\csv_files\\register\\users.csv"
 #define CSV_USER_FEEDBACK "resources\\csv_files\\user_feedback.csv"
 #define CSV_SURVEY_SUMARY "resources\\csv_files\\survey_sumary.csv"
 
 #define INITIAL_SCREEN "ansi\\initialscreen.ans"
 #define FINAL_SCREEN "ansi\\finalscreen.ans"
 #define LOADING_SCREEN "ansi\\loadingscreen.ans"
+#define INVALID_OPTION_SCREEN "ansi\\invalidoptionscreen.ans"
+#define SANTOS_DUMONT_SCREEN "ansi\\santosdumont.ans"
+#define OLIMPIC_GAMES_SCREEN "ansi\\olimpicgames.ans"
+#define MODERN_WEEK_SCREEN "ansi\\artweek.ans"
+#define TECNOLOGY_SECURITY_SCREEN "ansi\\tecnologysecurity.ans"
+#define CONTINUE_SCREEN "ansi\\continuescreen.ans"
+#define ADD_COMMENT_SCREEN "ansi\\addcomment.ans"
+#define ADD_COMMENT_SCREEN1 "ansi\\addcomment1.ans"
+#define INVALID_COMMENT_SCREEN "ansi\\addcommentfail.ans"
 
 #define MENU_MAIN "ansi\\mainmenu.ans"
 #define MENU_BUY_TICKETS "ansi\\buyticket.ans"
 #define MENU_THEMES "ansi\\themes.ans"
+#define MENU_THEMES_CHOICE "ansi\\themeschoice.ans"
 
 #define MENU_PAYMENT "ansi\\payment.ans"
-#define MENU_PIX_PAYMENT "ansi\\paymentpix_paths.txt"
-#define MENU_CARD_PAYMENT "ansi\\paymentcard_paths.txt"
+#define MENU_PIX_PAYMENT "ansi\\paymentpix.ans"
+#define MENU_PIX_PAYMENT_1 "ansi\\paymentpix1.ans"
+#define MENU_PIX_PAYMENT_1_FAIL "ansi\\paymentpix1fail.ans"
+#define MENU_CARD_PAYMENT "ansi\\paymentcard.ans"
+#define MENU_CARD_PAYMENT_1 "ansi\\paymentcard1.ans"
+#define MENU_CARD_PAYMENT_1_FAIL "ansi\\paymentcard1fail.ans"
+#define MENU_CARD_PAYMENT_2 "ansi\\paymentcard2.ans"
+#define MENU_CARD_PAYMENT_2_FAIL "ansi\\paymentcard2fail.ans"
+
+#define MENU_FULLPRICE "ansi\\normalentry.ans"
+#define MENU_FULLPRICE_1 "ansi\\normalentry1.ans"
+
+#define MENU_FREE_ENTRY "ansi\\freeentry.ans"
+#define MENU_JUNIOR_ENTRY "ansi\\freeentryjunior.ans"
+#define MENU_JUNIOR_ENTRY_1 "ansi\\freeentryjunior1.ans"
+#define MENU_JUNIOR_ENTRY_2 "ansi\\freeentryjunior2.ans"
+#define MENU_JUNIOR_ENTRY_2_FAIL "ansi\\freeentryjunior2fail.ans"
+#define MENU_SENIOR_ENTRY "ansi\\freeentrysenior.ans"
+#define MENU_SENIOR_ENTRY_1 "ansi\\freeentrysenior1.ans"
+#define MENU_SENIOR_ENTRY_2 "ansi\\freeentrysenior2.ans"
+#define MENU_SENIOR_ENTRY_2_FAIL "ansi\\freeentrysenior2fail.ans"
 
 #define MENU_HALFPRICE_ENTRY "ansi\\halfentry.ans"
-#define MENU_FREE_ENTRY "ansi\\freeentry.ans"
-#define MENU_FULLPRICE "ansi\\normalentry.ans"
+#define MENU_DISABLED_PERSON_ENTRY "ansi\\halfentrydisabledperson.ans"
+#define MENU_DISABLED_PERSON_ENTRY_1 "ansi\\halfentrydisabledperson1.ans"
+#define MENU_DISABLED_PERSON_ENTRY_2 "ansi\\halfentrydisabledperson2.ans"
+#define MENU_DISABLED_PERSON_ENTRY_2_FAIL "ansi\\halfentrydisabledperson2fail.ans"
+#define MENU_STUDENT_ENTRY "ansi\\halfentrystudent.ans"
+#define MENU_STUDENT_ENTRY_1 "ansi\\halfentrystudent1.ans"
+#define MENU_STUDENT_ENTRY_2 "ansi\\halfentrystudent2.ans"
+#define MENU_STUDENT_ENTRY_2_FAIL "ansi\\halfentrystudent2fail.ans"
 
-#define MENU_JUNIOR_ENTRY "ansi\\juniorentry_paths.txt"
-#define MENU_SENIOR_ENTRY "ansi\\seniorentry_paths.txt"
-#define MENU_DISABLED_PERSON_ENTRY "ansi\\disabledperson_paths.txt"
-#define MENU_STUDENT_ENTRY "ansi\\student_paths.txt"
-
-#define MENU_SANTOS_DUMONT "ansi\\santosdumont.ans"
-#define MENU_OLIMPIC_GAMES "ansi\\olimpicgames.ans"
-#define MENU_MODERN_WEEK "ansi\\artweek.ans"
-#define MENU_TECNOLOGY_SECURITY "ansi\\tecnologysecurity.ans"
+#define SURVEY_PATHS "ansi\\surveypaths.txt"
 
 #define ARTS_SANTOS_DUMONT "ansi\\santosdumont_paths.txt"
 #define ARTS_OLIMPIC_GAMES "ansi\\olimpicgames_paths.txt"
 #define ARTS_MODERN_WEEK "ansi\\modernweek_paths.txt"
 #define ARTS_TECNOLOGY_SECURITY "ansi\\tecnologysecurity_paths.txt"
 
-#define SURVEY_SANTOS_DUMONT1 "ansi\\santosdumont1survey_paths.txt"
-#define SURVEY_SANTOS_DUMONT2 "ansi\\santosdumont2survey_paths.txt"
-#define SURVEY_SANTOS_DUMONT3 "ansi\\santosdumont3survey_paths.txt"
-#define SURVEY_SANTOS_DUMONT4 "ansi\\santosdumont4survey_paths.txt"
-
-#define SURVEY_OLIMPIC_GAMES1 "ansi\\olimpicgames1survey_paths.txt"
-#define SURVEY_OLIMPIC_GAMES2 "ansi\\olimpicgames2survey_paths.txt"
-#define SURVEY_OLIMPIC_GAMES3 "ansi\\olimpicgames3survey_paths.txt"
-#define SURVEY_OLIMPIC_GAMES4 "ansi\\olimpicgames4survey_paths.txt"
-
-#define SURVEY_MODERN_WEEK1 "ansi\\modernweek1survey_paths.txt"
-#define SURVEY_MODERN_WEEK2 "ansi\\modernweek2survey_paths.txt"
-#define SURVEY_MODERN_WEEK3 "ansi\\modernweek3survey_paths.txt"
-#define SURVEY_MODERN_WEEK4 "ansi\\modernweek4survey_paths.txt"
-
-#define SURVEY_TECNOLOGY_SECURITY1 "ansi\\tecnologysecurity1survey_paths.txt"
-#define SURVEY_TECNOLOGY_SECURITY2 "ansi\\tecnologysecurity2survey_paths.txt"
-#define SURVEY_TECNOLOGY_SECURITY3 "ansi\\tecnologysecurity3survey_paths.txt"
-#define SURVEY_TECNOLOGY_SECURITY4 "ansi\\tecnologysecurity4survey_paths.txt"
+void loadScreen(char screen[100]);
 
 /* Função para abrir e ler um arquivo a partir do caminho informado */
 void readFile(char file_path[100]);

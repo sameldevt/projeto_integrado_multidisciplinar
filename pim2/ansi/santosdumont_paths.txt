@@ -1,0 +1,4 @@
+ansi\santos_dumont_150\santos_dumont\santosdumont70.ans
+ansi\santos_dumont_150\torre_eifel\placeholder.ans
+ansi\santos_dumont_150\balao\balao.ans
+ansi\santos_dumont_150\14bis\14_bis_v2.ans

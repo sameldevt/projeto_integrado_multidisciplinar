@@ -10,132 +10,133 @@
 
 /* Arquivo com funções de verificação de entrada de usuários */
 
-void verifyPersonEntry() {
-	char name[51];
+int verifyPersonEntry() {
+	char name[100];
 
-	system("cls");
-	readFile(MENU_FULLPRICE);
+	loadLoadingScreen();
+	loadScreen(MENU_FULLPRICE);
 
-	printf("   >> Nome: ");
-	scanf_s("%50s", name, 51);
+	scanf_s("%50s", name, 100);
 
 	registerUser(name);
 
-	printf("Usuário Identificado com sucesso!");
-	threeSecTimer();
+	loadScreen(MENU_FULLPRICE_1);
+	Sleep(1500);
 
-	selectPaymentOption();
+	return 1;
 }
 
-void verifyStudentEntry() {
-	char name[51];
-	int student_id;
+int verifyStudentEntry() {
+	char name[100];
+	char student_id[8];
 
-	system("cls");
-	readFile(MENU_STUDENT_ENTRY);
-
-	printf("   >> Nome: ");
-	scanf_s("%51s", name, 51);
+	loadLoadingScreen();
+	loadScreen(MENU_STUDENT_ENTRY);
+	scanf_s("%100s", name, 100);
 
 	while (1) {
-		printf("   >> RA: ");
-		scanf_s("%d", &student_id);
+		loadScreen(MENU_STUDENT_ENTRY_1);
+		scanf_s("%8s", &student_id, 8);
 
 		if (sizeof(student_id) > 8) {
-			perror("RA inválido! O tamanho máximo para este documento é de 8 digitos.");
-			threeSecTimer();
+			loadScreen(MENU_STUDENT_ENTRY_2_FAIL);
+			Sleep(1500);
+			continue;
+		}
+		else if (sizeof(student_id) < 8) {
+			loadScreen(MENU_STUDENT_ENTRY_2_FAIL);
+			Sleep(1500);
 			continue;
 		}
 		break;
 	}
 
-	printf("Estudante identificado com sucesso\n");
-	threeSecTimer();
+	registerStudent(name, student_id);
+	loadScreen(MENU_STUDENT_ENTRY_2);
+	Sleep(1500);
 
-	selectPaymentOption();
+	return 1;
 }
 
-void verifySeniorEntry() {
-	char name[51];
+int verifySeniorEntry() {
+	char name[100];
 	int age;
 
-	system("cls");
-	readFile(MENU_SENIOR_ENTRY);
-
-	printf("   >> Nome: ");
-	scanf_s("%51s", name, 51);
+	loadLoadingScreen();
+	loadScreen(MENU_SENIOR_ENTRY);
+	scanf_s("%100s", name, 100);
 
 	while (1) {
-		printf("   >> Idade: ");
+		loadScreen(MENU_SENIOR_ENTRY_1);
 		scanf_s("%d", &age);
 
 		if (age < 60) {
-			perror("Idade abaixo do limite de 60 anos!");
-			threeSecTimer();
+			loadScreen(MENU_SENIOR_ENTRY_2_FAIL);
 			continue;
 		}
 		break;
 	}
 	
-	printf("Usuário verificado com sucesso!");
-	threeSecTimer();
+	registerSenior(name, age);
+	loadScreen(MENU_SENIOR_ENTRY_2);
+	Sleep(1500);
 
-	selectPaymentOption();
+	return 1;
 }
 
-void verifyJuniorEntry() {
-	char name[51];
+int verifyJuniorEntry() {
+	char name[100];
 	int age;
 
-	int name_length = sizeof(name) / sizeof(name[0]);
-	system("cls");
-	readFile(MENU_JUNIOR_ENTRY);
-
-	printf("   >> Nome: ");
-	scanf_s("%51s", name, name_length);
+	loadLoadingScreen();
+	loadScreen(MENU_JUNIOR_ENTRY);
+	scanf_s("%100s", name, 100);
 
 	while(1){
-		printf("   >> Idade: ");
+		loadScreen(MENU_JUNIOR_ENTRY_1);
 		scanf_s("%d", &age);
 		
 		if (age > 5) {
-			perror("Idade acima do limite de 5 anos!");
-			threeSecTimer();
+			loadScreen(MENU_JUNIOR_ENTRY_2_FAIL);
+			Sleep(1500);
 			continue;
 		}
 		break;
 	}
 	
-	printf("Usuário verificado com sucesso!");
-	threeSecTimer();
-
-	selectPaymentOption();
+	registerJunior(name, age);
+	loadScreen(MENU_JUNIOR_ENTRY_2);
+	Sleep(1500);
+	return 1;
 }
 
-void verifyDisabledPersonEntry() {
-	int disabled_person_id;
-	char name[51];
+int verifyDisabledPersonEntry() {
+	char name[100];
+	char disabled_person_id[11];
 
-	system("cls");
-	readFile(MENU_DISABLED_PERSON_ENTRY);
-
-	printf("   >> Nome: ");
-	scanf_s("%51s", name, 51);
+	loadLoadingScreen();
+	loadScreen(MENU_DISABLED_PERSON_ENTRY);
+	scanf_s("%51s", name, 100);
 
 	while (1) {
-		printf("   >> Identificação: ");
-		scanf_s("%d", &disabled_person_id);
+		loadScreen(MENU_DISABLED_PERSON_ENTRY_1);
+		scanf_s("%11s", &disabled_person_id, 11);
 
 		if (sizeof(disabled_person_id) > 11) {
-			perror("Identidade inválida! O tamanho máximo para este documento é de 11 digitos.");
-			threeSecTimer();
+			loadScreen(MENU_DISABLED_PERSON_ENTRY_2_FAIL);
+			Sleep(1500);
+			continue;
+		}
+		else if (sizeof(disabled_person_id) < 11) {
+			loadScreen(MENU_DISABLED_PERSON_ENTRY_2_FAIL);
+			Sleep(1500);
 			continue;
 		}
 		break;
 	}
 
-	printf("Usuário verificado com sucesso!");
-	threeSecTimer();
-
-	selectPaymentOption();
+	registerDisabledPerson(name, disabled_person_id);
+	loadScreen(MENU_DISABLED_PERSON_ENTRY_2);
+	Sleep(1500);
+	return 1;
 }

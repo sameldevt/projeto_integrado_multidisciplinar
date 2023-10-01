@@ -9,71 +9,63 @@
 
 /* Arquivo com funções para verificação de pagamento */
 
-void verifyCardPayment() {
-	int card_number;
+int verifyCardPayment() {
+	char card_number[13];
 	char card_holder[101];
-	int identification_number;
+	char identification_number[4]; 
 
-	system("cls");
-
-	readFile(MENU_CARD_PAYMENT);
-	printf("   >> Titular do cartao: ");
-	scanf_s("%100s", card_holder, 101);
+	loadLoadingScreen();
 
 	while (1) {
-		printf("   >> Numero do cartao: ");
-		scanf_s("%d", &card_number);
+		loadScreen(MENU_CARD_PAYMENT);
+		scanf_s("%13s", &card_number, 13);
 
-		if (sizeof(card_number) < 12 || sizeof(card_number) > 12) {
-			printf("O número do cartão informado não é válido!\n");
-			printf("O número do seu cartão precisa ter 12 digitos!\n");
-			threeSecTimer();
-			system("cls");
+		if (sizeof(card_number) < 12 && sizeof(card_number) > 12) {
+			loadScreen(MENU_CARD_PAYMENT_1_FAIL);
+			Sleep(1500);
+			loadLoadingScreen();
 			continue;
 		}
 		break;
 	}
 
 	while (1) {
-		printf("   >> Código de segurança do cartão: ");
-		scanf_s("%d", &identification_number);
+		loadScreen(MENU_CARD_PAYMENT_1);
+		scanf_s("%3s", &identification_number, 3);
 
-		if (sizeof(identification_number) > 3 && sizeof(identification_number < 3)) {
-			printf("Código de segurança inválido");
-			printf("O código de segurança do seu cartão precisa ter 3 digitos!\n");
-			threeSecTimer();
-			system("cls");
+		if (sizeof(identification_number) > 3 && sizeof(identification_number) < 3) {
+			loadScreen(MENU_CARD_PAYMENT_2_FAIL);
+			Sleep(1500);
+			loadLoadingScreen();
 			continue;
 		}
 		break;
 	}
-	
-	printf("Pagamento feito com sucesso\n");
-	threeSecTimer();
-	selectThemeOption();
+
+	loadScreen(MENU_CARD_PAYMENT_2);
+	Sleep(1500);
+	return 1;
 }
 
-void verifyPixPayment() {
+int verifyPixPayment() {
 	float value;
 
-	while (1) {
-		system("cls");
-		readFile(MENU_PIX_PAYMENT);
+	loadLoadingScreen();
 
-		printf("   >> Valor: ");
+	while (1) {
+		loadScreen(MENU_PIX_PAYMENT);
 		scanf_s("%f", &value);
 		
-		if (value < 10.0) {
-			printf("Valor informado não é suficiente para comprar um ingresso!\n");
-			printf("O ingresso custa R$10,00\n");
-			threeSecTimer();
-			system("cls");
+		if (value < 5.0) {
+			loadScreen(MENU_PIX_PAYMENT_1_FAIL);
+			Sleep(1500);
+			loadLoadingScreen();
 			continue;
 		}
 		break;
 	}
 
-	printf("Pagamento feito com sucesso");
-	threeSecTimer();
-	selectThemeOption();
+	loadScreen(MENU_PIX_PAYMENT_1);
+	Sleep(1500);
+	return 1;
 }

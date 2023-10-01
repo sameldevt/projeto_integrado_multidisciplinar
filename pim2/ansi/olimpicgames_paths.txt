@@ -1,0 +1,4 @@
+ansi\olimpiadas_2024\arte1\placeholder.ans
+ansi\olimpiadas_2024\arte2\placeholder.ans
+ansi\olimpiadas_2024\arte3\placeholder.ans
+ansi\olimpiadas_2024\arte4\placeholder.ans

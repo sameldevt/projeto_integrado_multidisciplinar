@@ -1,3 +1,0 @@
-ansi\\paymentcard.ans
-ansi\\paymentcard1.ans
-ansi\\paymentcard2.ans

@@ -2,16 +2,25 @@
 #ifndef ARTS
 #define ARTS
 
-/* Função para carregar uma arte de acordo com o seu tema */
-void loadArts(char theme[100]);
+void setArtScreenSize(char theme[100]);
+
+double calculateFeedbackAverage(double feedback);
+
+char addComment();
+
+int answerSurvey();
+
+int continueProgramFlow();
+
+int keyChecker();
 
 /* Função para registrar a avaliação de uma arte no sistema */
-void registerArtFeedback(char art[100], int feedback);
+void registerArtFeedback(char art[100], double score, char comment[200]);
 
 /* Função para carregar um questionário de acordo com o seu tema */
-void loadSurvey(char art[100]);
+int loadSurvey(char art[30]);
 
-/* Função para avaliar uma arte */
-int appraiseArt(char art_name[21]);
+/* Função para carregar uma arte de acordo com o seu tema */
+int loadArts(char theme[100]);
 
 #endif

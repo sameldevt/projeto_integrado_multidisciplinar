@@ -1,0 +1,4 @@
+ansi\seguranca\arte1\placeholder.ans
+ansi\seguranca\arte2\placeholder.ans
+ansi\seguranca\arte3\placeholder.ans
+ansi\seguranca\arte4\placeholder.ans

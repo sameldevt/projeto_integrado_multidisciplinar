@@ -11,124 +11,197 @@
 #include "arts.h"
 
 void selectThemeOption() {
-	int theme;
+	int key;
+	
+	loadLoadingScreen();
 
-	while (1) {
-		system("cls");
-		readFile(MENU_THEMES);
-
-		int key = keyboardCheck();
+	while (_kbhit() == NULL) {
+		loadScreen(MENU_THEMES_CHOICE);
+		key = _getch();
 
 		switch (key) {
 		case 49:
-			loadArts(ARTS_MODERN_WEEK);
-			break;
+			loadScreen(MODERN_WEEK_SCREEN);
+			Sleep(1500);
+			if (loadArts(ARTS_MODERN_WEEK)) {
+				continue;
+			}
 		case 50:
-			loadArts(ARTS_SANTOS_DUMONT);
-			break;
+			loadScreen(SANTOS_DUMONT_SCREEN);
+			Sleep(1500);
+			if (loadArts(ARTS_SANTOS_DUMONT)) {
+				continue;
+			}
 		case 51:
-			loadArts(ARTS_OLIMPIC_GAMES);
-			break;
+			loadScreen(OLIMPIC_GAMES_SCREEN);
+			Sleep(1500);
+			if (loadArts(ARTS_OLIMPIC_GAMES)) {
+				continue;
+			}
 		case 52:
-			loadArts(ARTS_TECNOLOGY_SECURITY);
-			break;
+			loadScreen(TECNOLOGY_SECURITY_SCREEN);
+			Sleep(1500);
+			if (loadArts(ARTS_TECNOLOGY_SECURITY)) {
+				continue;
+			}
+		case 81:
+		case 113:
+			/* Volta para o menu principal*/
+			return 1;
 		default:
-			printf("Opção inválidad!");
-			threeSecTimer();
+			loadScreen(INVALID_OPTION_SCREEN);
+			Sleep(1500);
+			loadLoadingScreen();
 			continue;
 		}
 	}
 }
 
-void selectArtOption(char theme) {
+int selectPaymentOption() {
+	loadLoadingScreen();
 	int key;
 
-	while (1) {
-		system("cls");
-		key = keyboardCheck();
+	while (_kbhit() == NULL) {
+		loadScreen(MENU_PAYMENT);
+		key = _getch();
 
+		switch (key) {
+		case 49: 
+			if (verifyCardPayment()) {
+				break;
+			}
+		case 50: 
+			if (verifyPixPayment()) {
+				break;
+			}
+		case 81:
+		case 113:
+			/* Volta para o menu principal*/
+			return 1;
+		default:
+			// loadFailScreen();
+			continue;
+		}
+		break;
+	}
+
+	selectThemeOption();
+}
+
+
+int selectHalfPriceEntry() {
+	int key;
+
+	while (_kbhit() == NULL) {
+		loadScreen(MENU_HALFPRICE_ENTRY);
+		key = _getch();
 		switch (key) {
 		case 49:
-			loadArts(theme);
+			return 0;
 		case 50:
-			/* Volta para o menu de temas */
-			selectThemeOption();
-		case 51:
-			/* Finaliza o programa */
-			//readFile(GOODBYE_SCREEN);
-			exit(0);
+			return 1;
 		default:
-			printf("\nOpção invalida!");
 			continue;
 		}
+		Sleep(500);
 	}
 }
 
-void selectPaymentOption() {
+int selectFreeEntry() {
 	int key;
 
-	while (1) {
-		system("cls");
-		readFile(MENU_PAYMENT);
-
-		key = keyboardCheck();
-
+	while (_kbhit() == NULL) {
+		loadScreen(MENU_FREE_ENTRY);
+		key = _getch();
 		switch (key) {
-		case 49: verifyCardPayment(); 
-		case 50: verifyPixPayment(); 
-		case 51: selectTicketMenuOption();
+		case 49:
+			return 0;
+		case 50:
+			return 1;
 		default:
-			printf("\nOpção inválida!");
-			threeSecTimer();
 			continue;
 		}
+		Sleep(500);
 	}
 }
 
-void selectTicketMenuOption() {
+int selectTicketMenuOption() {
+	loadLoadingScreen();
 	int key;
-	while (1) {
-		system("cls");
-		readFile(MENU_BUY_TICKETS);
 
-		key = keyboardCheck();
+	while (_kbhit() == NULL) {
+		loadScreen(MENU_BUY_TICKETS);
+		key = _getch();
+
 		switch (key) {
-		case 49: verifyPersonEntry();
-		case 50: verifyStudentEntry();
-		case 51: verifySeniorEntry();
-		case 52: verifyDisabledPersonEntry();
+		case 49: 
+			if (verifyPersonEntry()) {
+				break;
+			}
+		case 50: 
+			if (selectHalfPriceEntry()) {
+				if (verifyDisabledPersonEntry()) {
+					break;
+				}
+			}
+			else {
+				if (verifyStudentEntry()) {
+					break;
+				}
+			}
+		case 51: 
+			if (selectFreeEntry()) {
+				if (verifySeniorEntry()) {
+					break;
+				}
+			}
+			else {
+				if (verifyJuniorEntry()) {
+					break;
+				}
+			}
+		case 52: 
+			if (verifyDisabledPersonEntry()) {
+				break;
+			}
+		case 81:
+		case 113:
+			/* Volta para o menu principal*/
+			return 1;
 		default:		
-			printf("\nOpção inválida!");
-			threeSecTimer();
 			continue;
 		}
+		break;
 	}
+
+	selectPaymentOption();
 }
 
 void selectMainMenuOption() {
-	int option;
+	int key;
 
-	while (1) {
-		system("cls");
+	while (_kbhit() == NULL) {
+		loadScreen(MENU_MAIN);
+		key = _getch();
 
-		readFile(MENU_MAIN);
-		option = keyboardCheck();
-
-		switch (option) {
-		case 49: selectTicketMenuOption();
+		switch (key) {
+		case 49: 
+			if (selectTicketMenuOption()) {
+				continue;
+			}
 		case 50:
 			do {
-				system("cls");
-				readFile(MENU_THEMES);
+				loadScreen(MENU_THEMES);
 			} while (keyboardCheck() != 113);
 			continue;
-		case 51:
-			//readFile(GOODBYE_SCREEN);
-			threeSecTimer();
+		case 81:
+		case 113:
+			/* Finaliza o programa */
+			loadScreen(FINAL_SCREEN);
+			Sleep(1500);
 			exit(0); 
 		default:
-			printf("\nOpção invalida!");
-			threeSecTimer();
+			// loadFailScreen();
 			continue;
 		}
 	}

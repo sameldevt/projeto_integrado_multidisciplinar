@@ -2,30 +2,156 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
+#include <windows.h>
+#include <math.h>
 
 #include "files.h"
 #include "misc.h"
 #include "menu.h"
+#include "arts.h"
 
 /* Arquivo com funções que envolvem todo o sistema de artes */
 
-void registerArtFeedback(char art[100], int feedback) {
-	FILE** file_pointer;
-
-	file_pointer = fopen(art, "a");
-
-	fprintf(file_pointer, feedback);
-
-	fclose(file_pointer);
+void setArtScreenSize(char theme[100]) {
+	if (theme == ARTS_MODERN_WEEK || theme == ARTS_SANTOS_DUMONT) {
+		setVerticalSize();
+	}
+	else {
+		setHorizontalSize();
+	}
 }
 
-void loadSurvey(char art[100]) {
+double calculateFeedbackAverage(double feedback) {
+	return feedback / 5;
+}
+
+char addComment() {
+	int key;
+	loadLoadingScreen();
+
+	while (_kbhit() == NULL) {
+		loadScreen(ADD_COMMENT_SCREEN1);
+		key = _getch();
+		switch (key) {
+		case 49:
+			break;
+		case 50:
+			return '----';
+		default:
+			continue;
+		}
+		break;
+	}
+
+	char comment[200];
+
+	while (1) {
+		loadScreen(ADD_COMMENT_SCREEN);
+		scanf("&s", &comment);
+
+		if (sizeof(comment) > 200) {
+			loadScreen(INVALID_COMMENT_SCREEN);
+			continue;
+		}
+		break;
+	}
+	return comment;
+}
+
+int answerSurvey() {
+	int key;
+
+	while (_kbhit() == NULL) {
+		key = _getch();
+		switch (key) {
+			/* Tecla 1 */
+		case 49:
+			return 50;
+			/* Tecla 2 */
+		case 50:
+			return 40;
+			/* Tecla 3 */
+		case 51:
+			return 30;
+			/* Tecla 4 */
+		case 52:
+			return 20;
+			/* Tecla 5 */
+		case 53:
+			return 10;
+		case 81:
+		case 113:
+			return 0;
+		default:
+			continue;
+		}
+		Sleep(500);
+	}
+}
+
+int continueProgramFlow() {
+	int key;
+
+	while (_kbhit() == NULL) {
+		loadScreen(CONTINUE_SCREEN);
+		key = _getch();
+		switch (key) {
+		case 49:
+			return 1;
+		case 50:
+			return 0;
+		default:
+			continue;
+		}
+		Sleep(500);
+	}
+}
+
+int keyChecker() {
+	int key;
+	while (_kbhit() == NULL) {
+		if (key = _getch()) {
+			switch (key) {
+			case 81:
+			case 113:
+				return 0;
+			case 224:
+				key = _getch();
+
+				switch (key) {
+				case 77:
+					return 1;
+				}
+			default:
+				continue;
+			}
+		}
+		Sleep(500);
+	}
+}
+
+void registerArtFeedback(char art_name[25], double score, char comment[200]) {
+	char feedback[200];
+	double score_average = ceil(calculateFeedbackAverage(score));
+
+	sprintf(feedback, "Arte: %s  Nota: %.0f\n\n%s\n", art_name, score_average, comment);
+
+	FILE** fp = fopen(CSV_USER_FEEDBACK, "a");
+
+	fprintf(fp, "%s\n", feedback);
+
+	fclose(fp);
+}
+
+int loadSurvey(char art_name[100]) {
 	char survey_path[100];
 	char survey[256];
-	int aux = 0;
-	int value = 0;
+	int art_score = 0;
 
-	FILE* fp1 = fopen(art, "r");
+	setHorizontalSize();
+	loadLoadingScreen();
+
+	FILE* fp1 = fopen(SURVEY_PATHS, "r");
 
 	while (fgets(survey_path, sizeof(survey_path), fp1) != NULL) {
 
@@ -48,79 +174,42 @@ void loadSurvey(char art[100]) {
 
 		fclose(fp2);
 
-		int key;
-
-		if (key = _getch()) {
-			switch (key) {
-				/* Tecla 1 */
-			case 49:
-				value += 10;
-				break;
-				/* Tecla 2 */
-			case 50:
-				value += 20;
-				break;
-				/* Tecla 3 */
-			case 51:
-				value += 30;
-				break;
-				/* Tecla 4 */
-			case 52:
-				value += 40;
-				break;
-				/* Tecla 5 */
-			case 53:
-				value += 50;
-				break;
-			}
-		}
-		continue;
+		art_score += answerSurvey();
+		system("cls");
 	}
-
 	fclose(fp1);
 
-	int result = value / 5;
-	registerArtFeedback(art, result);
+	registerArtFeedback(art_name, art_score, addComment());
 
-	while (1) {
-		system("cls");
-		printf("Deseja continuar? ");
-
-		int option = keyboardCheck();
-
-		switch (option) {
-		case 49:
-			selectThemeOption();
-			break;
-		case 50:
-			readFile(FINAL_SCREEN);
-			exit(0);
-		default:
-			printf("Opção inválida!\n");
-			threeSecTimer();
-			continue;
-		}
+	if (continueProgramFlow()) {
+		return 1;
 	}
+	endProgram();
 }
 
-void loadArts(char theme[100]) {
-	system("cls");
+int loadArts(char theme[100]) {
 	char art_path[100];
 	char art[256];
-	int aux = 0;
+	int pointer_location = 0;
 	int key;
 
-	FILE* fp1 = fopen(theme, "r");
+	// setArtScreenSize(theme);
+
+	FILE** fp1 = fopen(theme, "r");
+
+	if (fp1 == NULL) {
+		perror("Error when attempting to open the file!");
+		exit(1);
+	}
 
 	while (fgets(art_path, sizeof(art_path), fp1) != NULL) {
-
-		/* Substitui '\n' por '\0' */
 		size_t length = strlen(art_path);
+
 		if (length > 0 && art_path[length - 1] == '\n') {
 			art_path[length - 1] = '\0';
 		}
 
-		FILE* fp2 = fopen(art_path, "r");
+		FILE** fp2 = fopen(art_path, "r");
 
 		if (fp2 == NULL) {
 			perror("Error when attempting to open the file!");
@@ -133,82 +222,26 @@ void loadArts(char theme[100]) {
 
 		fclose(fp2);
 
-		if (key = _getch()) {
-			switch (key) {
-			/* Letra 'Q'*/
-			case 81:
-			case 113:
-				loadSurvey(art);
-				break;
-			/* Código especial para setas */
-			case 224:
-				/* Obtém o código da seta */
-				key = _getch();
-				switch (key) {
-				case 77:
-					system("cls");
-					if (aux == 3) {
-						// retorna para o inicio do arquivo fp1
-						fseek(fp1, 0, SEEK_SET);
-						aux = 0;
-						break;
-					}
-					aux++;
-					break;
-				}
-			default:
-				printf("tecla invalida");
-				threeSecTimer();
+		switch (keyChecker()) {
+		case 0:
+			fseek(fp1, 0, SEEK_END);
+			break;
+		case 1:
+			if (pointer_location == 3) {
+				fseek(fp1, 0, SEEK_SET);
+				pointer_location = 0;
 				break;
 			}
-		}
-	continue;
+			pointer_location++;
+			system("cls");
+			continue;
+		}	
+		continue;
 	}
+
 	fclose(fp1);
-}
 
-int appraiseArt(char art_name[21]) {
-	int rate;
-	char option;
-	char feedback[201];
-
-	printf("D� uma nota para a arte: ");
-	scanf_s("%d", &rate);
-
-	printf("Deseja adicionar um comentário? [s]im [n]ão ");
-	scanf_s("%c", &option, 1);
-
-	if (option == 's') {
-		char comment[101];
-
-		int comment_size = 101;
-
-		printf("Digite seu comentário (máx. 100 caracteres): ");
-		scanf_s("%100s", comment, sizeof(comment) == 1);
-
-		if (comment > comment_size) {
-			printf("Seu comentário é muito grande! O tamanho máximo é de 100 caracteres.");
-			return 1;
-		}
-		else {
-			sprintf(feedback, "%s,%s,%d\n", art_name, comment, rate);
-
-			registerArtFeedback(CSV_USER_FEEDBACK, feedback);
-
-			printf("Obrigado!\n");
-			return 0;
-		}
-	}
-	else if (option == 'n') {
-		sprintf(feedback, "%s,%d\n", art_name, rate);
-
-		registerArtFeedback(CSV_USER_FEEDBACK, feedback);
-
-		printf("Obrigado!\n");
-		return 0;
-	}
-	else {
-		printf("Opção inválida!");
+	if (loadSurvey(art)) {
 		return 1;
 	}
 }

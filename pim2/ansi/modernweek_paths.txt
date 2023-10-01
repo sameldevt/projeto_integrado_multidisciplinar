@@ -1,4 +1,4 @@
-ansi\\a_negra\\a_negra_ansi.ans
-ansi\\abaporu\\estrada_de_ferro_ansi.ans
-ansi\\estrada_de_ferro\\estrada_de_ferro_ansi.ans
-ansi\\operarios\\operarios_ansi.ans
+ansi\semana_da_arte\a_negra\anegra70.ans
+ansi\semana_da_arte\abaporu\abaporu70.ans
+ansi\semana_da_arte\estrada_de_ferro\estradadeferro70.ans
+ansi\semana_da_arte\operarios\operarios70.ans

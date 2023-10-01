@@ -1,3 +1,0 @@
-ansi\\freeentryjunior.ans
-ansi\\freeentryjunior1.ans
-ansi\\freeentryjunior2.ans
