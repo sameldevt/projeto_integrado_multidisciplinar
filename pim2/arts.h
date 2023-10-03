@@ -15,7 +15,7 @@ int continueProgramFlow();
 int keyChecker();
 
 /* Função para registrar a avaliação de uma arte no sistema */
-void registerArtFeedback(char art[100], double score, char comment[200]);
+void registerArtFeedback(char art[100], float score, char comment[200]);
 
 /* Função para carregar um questionário de acordo com o seu tema */
 int loadSurvey(char art[30]);

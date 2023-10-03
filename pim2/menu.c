@@ -49,11 +49,9 @@ void selectThemeOption() {
 			/* Volta para o menu principal*/
 			return 1;
 		default:
-			loadScreen(INVALID_OPTION_SCREEN);
-			Sleep(1500);
-			loadLoadingScreen();
 			continue;
 		}
+		Sleep(500);
 	}
 }
 

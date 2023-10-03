@@ -36,19 +36,17 @@ char addComment() {
 		case 49:
 			break;
 		case 50:
-			return '----';
+			return "--------";
 		default:
 			continue;
 		}
 		break;
 	}
-
 	char comment[200];
 
 	while (1) {
 		loadScreen(ADD_COMMENT_SCREEN);
-		scanf("&s", &comment);
-
+		scanf_s("%s", &comment, 200);
 		if (sizeof(comment) > 200) {
 			loadScreen(INVALID_COMMENT_SCREEN);
 			continue;
@@ -130,7 +128,7 @@ int keyChecker() {
 	}
 }
 
-void registerArtFeedback(char art_name[25], double score, char comment[200]) {
+void registerArtFeedback(char art_name[25], float score, char comment[200]) {
 	char feedback[200];
 	double score_average = ceil(calculateFeedbackAverage(score));
 
@@ -146,7 +144,7 @@ void registerArtFeedback(char art_name[25], double score, char comment[200]) {
 int loadSurvey(char art_name[100]) {
 	char survey_path[100];
 	char survey[256];
-	int art_score = 0;
+	float art_score = 0;
 
 	setHorizontalSize();
 	loadLoadingScreen();
@@ -179,7 +177,10 @@ int loadSurvey(char art_name[100]) {
 	}
 	fclose(fp1);
 
-	registerArtFeedback(art_name, art_score, addComment());
+	char comment[200] = "test";
+	strcpy(comment, addComment());
+
+	registerArtFeedback(art_name, art_score, comment);
 
 	if (continueProgramFlow()) {
 		return 1;
@@ -193,7 +194,7 @@ int loadArts(char theme[100]) {
 	int pointer_location = 0;
 	int key;
 
-	// setArtScreenSize(theme);
+	setArtScreenSize(theme);
 
 	FILE** fp1 = fopen(theme, "r");
 

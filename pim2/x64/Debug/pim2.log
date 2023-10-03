@@ -1,38 +1,36 @@
 ﻿  arts.c
 C:\ws-vs\pim2\pim2\arts.c(32,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
-C:\ws-vs\pim2\pim2\arts.c(39,11): warning C4305: 'return': truncation from 'int' to 'char'
-C:\ws-vs\pim2\pim2\arts.c(50,15): warning C4474: 'scanf' : too many arguments passed for format string
-C:\ws-vs\pim2\pim2\arts.c(50,15): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-C:\ws-vs\pim2\pim2\arts.c(58,2): warning C4047: 'return': 'char' differs in levels of indirection from 'char [200]'
-C:\ws-vs\pim2\pim2\arts.c(64,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
-C:\ws-vs\pim2\pim2\arts.c(95,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
-C:\ws-vs\pim2\pim2\arts.c(112,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
-C:\ws-vs\pim2\pim2\arts.c(141,10): warning C4047: 'function': 'FILE *const ' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(141,10): warning C4024: 'fprintf': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\arts.c(143,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(143,9): warning C4024: 'fclose': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\arts.c(139,9): warning C4047: 'initializing': 'FILE **' differs in levels of indirection from 'FILE *'
-C:\ws-vs\pim2\pim2\arts.c(182,43): warning C4047: 'function': 'char *' differs in levels of indirection from 'char'
-C:\ws-vs\pim2\pim2\arts.c(182,43): warning C4024: 'registerArtFeedback': different types for formal and actual parameter 3
-C:\ws-vs\pim2\pim2\arts.c(205,43): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(205,43): warning C4024: 'fgets': different types for formal and actual parameter 3
-C:\ws-vs\pim2\pim2\arts.c(219,34): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(219,34): warning C4024: 'fgets': different types for formal and actual parameter 3
-C:\ws-vs\pim2\pim2\arts.c(223,10): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(223,10): warning C4024: 'fclose': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\arts.c(227,10): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(227,10): warning C4024: 'fseek': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\arts.c(231,11): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(231,11): warning C4024: 'fseek': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\arts.c(242,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
-C:\ws-vs\pim2\pim2\arts.c(242,9): warning C4024: 'fclose': different types for formal and actual parameter 1
-C:\ws-vs\pim2\pim2\arts.c(198,9): warning C4047: 'initializing': 'FILE **' differs in levels of indirection from 'FILE *'
-C:\ws-vs\pim2\pim2\arts.c(212,10): warning C4047: 'initializing': 'FILE **' differs in levels of indirection from 'FILE *'
-C:\ws-vs\pim2\pim2\arts.c(194,6): warning C4101: 'key': unreferenced local variable
-C:\ws-vs\pim2\pim2\arts.c(58): warning C4172: returning address of local variable or temporary: comment
-C:\ws-vs\pim2\pim2\arts.c(90): warning C4715: 'answerSurvey': not all control paths return a value
-C:\ws-vs\pim2\pim2\arts.c(108): warning C4715: 'continueProgramFlow': not all control paths return a value
-C:\ws-vs\pim2\pim2\arts.c(131): warning C4715: 'keyChecker': not all control paths return a value
-C:\ws-vs\pim2\pim2\arts.c(188): warning C4715: 'loadSurvey': not all control paths return a value
-C:\ws-vs\pim2\pim2\arts.c(247): warning C4715: 'loadArts': not all control paths return a value
+C:\ws-vs\pim2\pim2\arts.c(39,4): warning C4047: 'return': 'char' differs in levels of indirection from 'char [9]'
+C:\ws-vs\pim2\pim2\arts.c(56,2): warning C4047: 'return': 'char' differs in levels of indirection from 'char [200]'
+C:\ws-vs\pim2\pim2\arts.c(62,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\ws-vs\pim2\pim2\arts.c(93,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\ws-vs\pim2\pim2\arts.c(110,18): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\ws-vs\pim2\pim2\arts.c(139,10): warning C4047: 'function': 'FILE *const ' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(139,10): warning C4024: 'fprintf': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(141,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(141,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(137,9): warning C4047: 'initializing': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\arts.c(181,18): warning C4047: 'function': 'const char *' differs in levels of indirection from 'char'
+C:\ws-vs\pim2\pim2\arts.c(181,18): warning C4024: 'strcpy': different types for formal and actual parameter 2
+C:\ws-vs\pim2\pim2\arts.c(206,43): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(206,43): warning C4024: 'fgets': different types for formal and actual parameter 3
+C:\ws-vs\pim2\pim2\arts.c(220,34): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(220,34): warning C4024: 'fgets': different types for formal and actual parameter 3
+C:\ws-vs\pim2\pim2\arts.c(224,10): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(224,10): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(228,10): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(228,10): warning C4024: 'fseek': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(232,11): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(232,11): warning C4024: 'fseek': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(243,9): warning C4047: 'function': 'FILE *' differs in levels of indirection from 'FILE **'
+C:\ws-vs\pim2\pim2\arts.c(243,9): warning C4024: 'fclose': different types for formal and actual parameter 1
+C:\ws-vs\pim2\pim2\arts.c(199,9): warning C4047: 'initializing': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\arts.c(213,10): warning C4047: 'initializing': 'FILE **' differs in levels of indirection from 'FILE *'
+C:\ws-vs\pim2\pim2\arts.c(195,6): warning C4101: 'key': unreferenced local variable
+C:\ws-vs\pim2\pim2\arts.c(88): warning C4715: 'answerSurvey': not all control paths return a value
+C:\ws-vs\pim2\pim2\arts.c(106): warning C4715: 'continueProgramFlow': not all control paths return a value
+C:\ws-vs\pim2\pim2\arts.c(129): warning C4715: 'keyChecker': not all control paths return a value
+C:\ws-vs\pim2\pim2\arts.c(189): warning C4715: 'loadSurvey': not all control paths return a value
+C:\ws-vs\pim2\pim2\arts.c(248): warning C4715: 'loadArts': not all control paths return a value
+C:\ws-vs\pim2\pim2\arts.c(56): warning C4172: returning address of local variable or temporary: comment
   pim2.vcxproj -> C:\ws-vs\pim2\x64\Debug\pim2.exe

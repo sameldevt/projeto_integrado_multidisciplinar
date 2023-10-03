@@ -3,8 +3,8 @@
 #define FILES
 
 #define CSV_USERS "resources\\csv_files\\register\\users.csv"
-#define CSV_USER_FEEDBACK "resources\\csv_files\\user_feedback.csv"
-#define CSV_SURVEY_SUMARY "resources\\csv_files\\survey_sumary.csv"
+#define CSV_USER_FEEDBACK "resources\\csv_files\\register\\user_feedback.csv"
+#define CSV_SURVEY_SUMARY "resources\\csv_files\\register\\survey_sumary.csv"
 
 #define INITIAL_SCREEN "ansi\\initialscreen.ans"
 #define FINAL_SCREEN "ansi\\finalscreen.ans"
